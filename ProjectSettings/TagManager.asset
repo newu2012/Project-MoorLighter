@@ -53,3 +53,6 @@ TagManager:
   - name: Character
     uniqueID: 1222326613
     locked: 0
+  - name: Foreground Uncollision
+    uniqueID: 1712426073
+    locked: 0
