@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Destructable
   - 
   - 
   - 
@@ -55,4 +55,7 @@ TagManager:
     locked: 0
   - name: Foreground Uncollision
     uniqueID: 1712426073
+    locked: 0
+  - name: Projectiles
+    uniqueID: 3537351669
     locked: 0

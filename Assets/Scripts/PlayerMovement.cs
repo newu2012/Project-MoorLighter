@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     
     private Vector2 movement;
+    private float fireRate = 0.5f;
     private Vector2 lastDir;
     
     
@@ -20,7 +18,11 @@ public class PlayerMovement : MonoBehaviour
     private static readonly int Vertical = Animator.StringToHash("Vertical");
     private static readonly int Speed = Animator.StringToHash("Speed");
 
-    // Update is called once per frame
+    private void Start()
+    {
+        _camera = Camera.main;
+    }
+
     void Update()
     {
         movement.x = Input.GetAxis("Horizontal");
@@ -29,6 +31,12 @@ public class PlayerMovement : MonoBehaviour
             lastDir = movement;
         movement.Normalize();
         
+        if (Input.GetMouseButtonDown(0))
+            InvokeRepeating( "ShootTo",0.00001f, fireRate);
+        
+        if (Input.GetMouseButtonUp(0))
+            CancelInvoke("ShootTo");
+        
         animator.SetFloat(LastHorizontal, lastDir.x);
         animator.SetFloat(LastVertical, lastDir.y);
         animator.SetFloat(Horizontal, movement.x);
@@ -36,8 +44,36 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat(Speed, movement.sqrMagnitude);
     }
 
+    
+    //Shooting starts here
+    
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + moveSpeed * Time.fixedDeltaTime * movement);
     }
+    #region Properties
+
+    public GameObject projectilePrefab;
+    private Camera _camera;
+
+    #endregion
+
+    #region Implementation
+
+    private Projectile InstantiateNewProjectile()
+    {
+        var newProjectile = Instantiate(projectilePrefab);
+        newProjectile.transform.position = transform.position;
+        return newProjectile.GetComponent<Projectile>();
+    }
+
+    public void ShootTo()
+    {
+        Vector2 worldMousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
+        var pDirection = (worldMousePosition - (Vector2)transform.position).normalized;
+        var newProjectile = InstantiateNewProjectile();
+        newProjectile.ShootTo(pDirection);
+    }
+
+    #endregion
 }
