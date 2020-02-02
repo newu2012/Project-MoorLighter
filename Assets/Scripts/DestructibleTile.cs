@@ -36,7 +36,7 @@ public class DestructibleTile : Tile
     }
     #endregion
     #region Asset DataBase
-    [MenuItem("Assets/MateriaGame/DestructibleTile")]
+    [MenuItem("Assets/MoorLighter/DestructibleTile")]
     public static void CreateDestructibleTile()
     {
         var path = EditorUtility.SaveFilePanelInProject("Save Destructible Tile", "DestructibleTile_", "Asset", "Save Destructible Tile", "Assets");
