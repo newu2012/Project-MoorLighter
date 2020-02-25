@@ -34,7 +34,7 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
   m_ColliderType: 1
-  life: 50
+  life: 10
   brokenSprite: {fileID: -5801590616222575410, guid: a05e0a0a4acdce649828d26d397d3a86,
     type: 3}
   tilePosition: {x: 6, y: -2, z: 0}
