@@ -7301,7 +7301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634513324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00000023841858, y: 0.00000011920929, z: -10}
+  m_LocalPosition: {x: -0.5499998, y: 0.54000014, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 237252237}
@@ -9280,7 +9280,7 @@ GameObject:
   - component: {fileID: 1438529791}
   - component: {fileID: 1438529793}
   - component: {fileID: 1438529792}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Foreground Below
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15060,7 +15060,7 @@ PrefabInstance:
     - target: {fileID: 1978191647384271640, guid: 126894f9643301b43ad021d64bc5cf8c,
         type: 3}
       propertyPath: damage
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2038688422749209136, guid: 126894f9643301b43ad021d64bc5cf8c,
         type: 3}

@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     #region dataFields
-    private const float moveSpeed = 1.5f;
+    private const float moveSpeed = 2f;
     public Rigidbody2D rb;
     public Animator animator;
     private Vector2 movement;
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         movement.Normalize();
         
         if (Input.GetMouseButtonDown(0))
-            InvokeRepeating( nameof(Attack),0.001f, attackRate);
+            InvokeRepeating( nameof(Attack),0.1f, attackRate);
         
         if (Input.GetMouseButtonUp(0))
             CancelInvoke(nameof(Attack));
