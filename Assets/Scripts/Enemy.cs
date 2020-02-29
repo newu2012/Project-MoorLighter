@@ -25,13 +25,14 @@ public class Enemy : Damageble
     #endregion
     void Start()
     {
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         //animator.SetBool("isRunning", true);
     }
 
     // Update is called once per frame
     void Update()
     {
+        movement.x = 1;
         if (movement.magnitude > 0)
             lastDir = movement;
         movement.Normalize();
@@ -49,7 +50,11 @@ public class Enemy : Damageble
         }
         if (health <= 0)
             Destroy(gameObject);
-        transform.Translate(Vector2.right * (moveSpeed * Time.deltaTime));
+    }
+    
+    private void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + moveSpeed * Time.fixedDeltaTime * movement);
     }
 
     public void TakeDamage(int damage)

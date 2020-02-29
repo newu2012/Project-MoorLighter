@@ -7379,7 +7379,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7403,7 +7403,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 848430321}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.5499998, y: 0.54000014, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -15122,6 +15122,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2038688422749209142, guid: 126894f9643301b43ad021d64bc5cf8c,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2038688422749209142, guid: 126894f9643301b43ad021d64bc5cf8c,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 126894f9643301b43ad021d64bc5cf8c, type: 3}
 --- !u!1001 &9024477140761476239
@@ -15200,8 +15210,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: 818170bb6374d1948ae230a91282511c,
-        type: 2}
+      objectReference: {fileID: 9100000, guid: 8d82040ab95ea364ca9a3a23a60a0b7f, type: 2}
     - target: {fileID: 6058964033055034916, guid: 7ab69729875ca744a8774e86621b5eb1,
         type: 3}
       propertyPath: m_Name
@@ -15211,6 +15220,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058964033055034918, guid: 7ab69729875ca744a8774e86621b5eb1,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058964033055034918, guid: 7ab69729875ca744a8774e86621b5eb1,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ab69729875ca744a8774e86621b5eb1, type: 3}
