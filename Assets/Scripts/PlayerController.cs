@@ -64,7 +64,10 @@ public class PlayerController : MonoBehaviour
         Collider2D[] subjectsToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
         foreach (var subject in subjectsToDamage)
         {
-            subject.GetComponent<Damageble>().TakeDamage(damage);
+            if (subject.CompareTag($"Enemy"))
+                subject.GetComponent<Enemy>().TakeDamage(damage);
+            else
+                subject.GetComponent<Damageble>().TakeDamage(damage);
         }
     }
 
