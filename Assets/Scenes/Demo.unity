@@ -135,7 +135,7 @@ PrefabInstance:
     - target: {fileID: 243637711237472004, guid: 1ca55928133e39340b1a316b914b765a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 243637711237472004, guid: 1ca55928133e39340b1a316b914b765a,
         type: 3}
@@ -7301,7 +7301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634513324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06999976, y: -0.009999881, z: -10}
+  m_LocalPosition: {x: 0.00000023841858, y: 0.00000011920929, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 237252237}
@@ -7379,7 +7379,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 4
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7403,7 +7403,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 848430321}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06999976, y: -0.009999881, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7457,7 +7457,7 @@ PrefabInstance:
     - target: {fileID: 243637711237472004, guid: 1ca55928133e39340b1a316b914b765a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.5
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 243637711237472004, guid: 1ca55928133e39340b1a316b914b765a,
         type: 3}
@@ -7530,7 +7530,7 @@ PrefabInstance:
     - target: {fileID: 243637711237472004, guid: 1ca55928133e39340b1a316b914b765a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.5
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 243637711237472004, guid: 1ca55928133e39340b1a316b914b765a,
         type: 3}
@@ -13961,7 +13961,7 @@ GameObject:
   - component: {fileID: 1539644450}
   - component: {fileID: 1539644449}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Camera size(Don't touch)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15052,15 +15052,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1978191647384271640, guid: 126894f9643301b43ad021d64bc5cf8c,
+        type: 3}
+      propertyPath: attackRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1978191647384271640, guid: 126894f9643301b43ad021d64bc5cf8c,
+        type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2038688422749209136, guid: 126894f9643301b43ad021d64bc5cf8c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.07
+      value: -0.55
       objectReference: {fileID: 0}
     - target: {fileID: 2038688422749209136, guid: 126894f9643301b43ad021d64bc5cf8c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.01
+      value: 0.54
       objectReference: {fileID: 0}
     - target: {fileID: 2038688422749209136, guid: 126894f9643301b43ad021d64bc5cf8c,
         type: 3}
@@ -15110,11 +15120,6 @@ PrefabInstance:
     - target: {fileID: 2038688422749209140, guid: 126894f9643301b43ad021d64bc5cf8c,
         type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 2038688422749209140, guid: 126894f9643301b43ad021d64bc5cf8c,
-        type: 3}
-      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []

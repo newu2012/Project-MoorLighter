@@ -1,41 +1,48 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
+    #region dataFields
     private const float moveSpeed = 1.5f;
-
     public Rigidbody2D rb;
     public Animator animator;
-    
     private Vector2 movement;
-    private float fireRate = 0.5f;
+    private float attackRate = 0.5f;
     private Vector2 lastDir;
-    
-    
+    public Transform attackPos;
+    public LayerMask whatIsEnemies;
+    public float attackRange;
+    public int damage;
+    private Camera _camera;
+    #endregion
+
+    #region StringToHash
     private static readonly int LastHorizontal = Animator.StringToHash("LastHorizontal");
     private static readonly int LastVertical = Animator.StringToHash("LastVertical");
     private static readonly int Horizontal = Animator.StringToHash("Horizontal");
     private static readonly int Vertical = Animator.StringToHash("Vertical");
     private static readonly int Speed = Animator.StringToHash("Speed");
-
+    #endregion
     private void Start()
     {
         _camera = Camera.main;
     }
-
+    //Basic Input
+    #region InputInUpdate
     void Update()
     {
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
-        if (movement.magnitude > 0) //Если движение ещё есть, то обновляем последнее направление для стояния
+        if (movement.magnitude > 0)
             lastDir = movement;
         movement.Normalize();
         
         if (Input.GetMouseButtonDown(0))
-            InvokeRepeating( "ShootTo",0.00001f, fireRate);
+            InvokeRepeating( nameof(Attack),0.001f, attackRate);
         
         if (Input.GetMouseButtonUp(0))
-            CancelInvoke("ShootTo");
+            CancelInvoke(nameof(Attack));
         
         animator.SetFloat(LastHorizontal, lastDir.x);
         animator.SetFloat(LastVertical, lastDir.y);
@@ -43,36 +50,28 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat(Vertical, movement.y);
         animator.SetFloat(Speed, movement.sqrMagnitude);
     }
-
-    
-    //Shooting starts here
-    
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + moveSpeed * Time.fixedDeltaTime * movement);
     }
-    #region Properties
-
-    public GameObject projectilePrefab;
-    private Camera _camera;
-
     #endregion
+    
+    //Attack starts here
+    #region AttackImplementation
 
-    #region Implementation
-
-    private Projectile InstantiateNewProjectile()
+    private void Attack()
     {
-        var newProjectile = Instantiate(projectilePrefab);
-        newProjectile.transform.position = transform.position;
-        return newProjectile.GetComponent<Projectile>();
+        Collider2D[] subjectsToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
+        foreach (var subject in subjectsToDamage)
+        {
+            subject.GetComponent<Damageble>().TakeDamage(damage);
+        }
     }
 
-    public void ShootTo()
+    private void OnDrawGizmosSelected()
     {
-        Vector2 worldMousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
-        var pDirection = (worldMousePosition - (Vector2)transform.position).normalized;
-        var newProjectile = InstantiateNewProjectile();
-        newProjectile.ShootTo(pDirection);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPos.position, attackRange);
     }
 
     #endregion
