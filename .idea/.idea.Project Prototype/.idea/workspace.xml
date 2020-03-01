@@ -3,9 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="447e29a7-9a3b-4c3a-b39b-b465762f0c09" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Prototype/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Prototype/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Prototype/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Prototype/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Prototype/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Prototype/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyCat Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnemyCat Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectile.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectile.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Damageble.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Damageble.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,114 +23,72 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Enemy.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
-              <caret line="70" column="5" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
+            <state relative-caret-position="180">
+              <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
               <folding>
-                <marker date="1580596832326" expanded="true" signature="63:2390" ph="{...}" />
-                <marker date="1580596832326" expanded="true" signature="708:751" ph="{...}" />
-                <marker date="1580596832326" expanded="true" signature="770:1518" ph="{...}" />
-                <marker date="1580596832326" expanded="true" signature="1587:1682" ph="{...}" />
-                <marker date="1580596832326" expanded="true" signature="1687:1790" ph="Properties" />
-                <marker date="1580596832326" expanded="true" signature="1796:2388" ph="Implementation" />
-                <marker date="1580596832326" expanded="true" signature="1869:2060" ph="{...}" />
-                <marker date="1580596832326" expanded="true" signature="2087:2372" ph="{...}" />
+                <marker date="1583088518511" expanded="true" signature="6:78" ph="..." />
+                <marker date="1583088518511" expanded="true" signature="113:1783" ph="{...}" />
+                <marker date="1583088518511" expanded="false" signature="125:370" ph="dataFields" />
+                <marker date="1583088518511" expanded="false" signature="375:818" ph="StringToHash" />
+                <marker date="1583088518511" expanded="true" signature="876:1487" ph="{...}" />
+                <marker date="1583088518511" expanded="true" signature="1335:1423" ph="{...}" />
+                <marker date="1583088518511" expanded="true" signature="1523:1618" ph="{...}" />
+                <marker date="1583088518511" expanded="true" signature="1662:1781" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Projectile.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Usefull scripts/TranslatableString.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="21" column="48" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="48" />
+            <state relative-caret-position="323">
+              <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
               <folding>
-                <marker date="1580591693204" expanded="true" signature="99:1591" ph="{...}" />
-                <marker date="1580591693204" expanded="true" signature="106:421" ph="Properties" />
-                <marker date="1580591693204" expanded="true" signature="431:641" ph="Implementation" />
-                <marker date="1580591693204" expanded="true" signature="497:626" ph="{...}" />
-                <marker date="1580591693204" expanded="true" signature="651:1589" ph="Unity callbacks" />
-                <marker date="1580591693204" expanded="true" signature="698:830" ph="{...}" />
-                <marker date="1580591693204" expanded="true" signature="885:1574" ph="{...}" />
-                <marker date="1580591693204" expanded="true" signature="936:1567" ph="{...}" />
-                <marker date="1580591693204" expanded="true" signature="1119:1524" ph="{...}" />
-                <marker date="1580591693204" expanded="true" signature="1274:1494" ph="{...}" />
+                <marker date="1583077319627" expanded="false" signature="6:78" ph="..." />
+                <marker date="1583077319627" expanded="true" signature="134:743" ph="{...}" />
+                <marker date="1583077319627" expanded="true" signature="378:741" ph="{...}" />
+                <marker date="1583077319627" expanded="true" signature="473:638" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/DestructibleTileMap.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Usefull scripts/TranslatableUIText.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="19" column="37" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="37" />
+            <state relative-caret-position="85">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
               <folding>
-                <marker date="1580591356651" expanded="true" signature="6:106" ph="..." />
-                <marker date="1580591356651" expanded="true" signature="155:1165" ph="{...}" />
-                <marker date="1580591356651" expanded="true" signature="162:290" ph="Properties" />
-                <marker date="1580591356651" expanded="true" signature="295:843" ph="Unity callbacks" />
-                <marker date="1580591356651" expanded="true" signature="342:828" ph="{...}" />
-                <marker date="1580591356651" expanded="true" signature="514:821" ph="{...}" />
-                <marker date="1580591356651" expanded="true" signature="610:811" ph="{...}" />
-                <marker date="1580591356651" expanded="true" signature="912:1162" ph="{...}" />
-                <marker date="1580591356651" expanded="true" signature="1050:1156" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/DestructibleTile.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="39" column="47" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
-              <folding>
-                <marker date="1580597575869" expanded="false" signature="6:65" ph="..." />
-                <marker date="1580597575869" expanded="true" signature="103:1352" ph="{...}" />
-                <marker date="1580597575869" expanded="true" signature="110:342" ph="Properties" />
-                <marker date="1580597575869" expanded="true" signature="347:658" ph="Tile Overriding" />
-                <marker date="1580597575869" expanded="true" signature="457:633" ph="{...}" />
-                <marker date="1580597575869" expanded="true" signature="663:924" ph="Implementation" />
-                <marker date="1580597575869" expanded="true" signature="728:909" ph="{...}" />
-                <marker date="1580597575869" expanded="true" signature="929:1350" ph="Asset DataBase" />
-                <marker date="1580597575869" expanded="true" signature="1053:1335" ph="{...}" />
+                <marker date="1583077255532" expanded="false" signature="6:78" ph="..." />
+                <marker date="1583077255532" expanded="true" signature="128:290" ph="{...}" />
+                <marker date="1583077255532" expanded="true" signature="205:288" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap.extras@0fca71e6b944a80b528ad5662092eb73c1f55214/Editor/Brushes/PrefabBrush/PrefabBrush.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+            <state relative-caret-position="374">
+              <caret line="66" column="44" lean-forward="true" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
               <folding>
-                <marker date="1582593171450" expanded="true" signature="6:67" ph="..." />
-                <marker date="1582593171450" expanded="true" signature="99:6050" ph="{...}" />
-                <marker date="1582593171450" expanded="true" signature="106:386" ph="/// This Brush instances and places a randomly selected Prefabs onto the targeted location and parents the instan ... " />
-                <marker date="1582593171450" expanded="true" signature="569:4672" ph="{...}" />
-                <marker date="1582593171450" expanded="true" signature="638:725" ph="/// The selection of Prefabs to paint from ... " />
-                <marker date="1582593171450" expanded="true" signature="773:875" ph="/// Factor for distribution of choice of Prefabs to paint ... " />
-                <marker date="1582593171450" expanded="true" signature="927:1041" ph="/// Anchor Point of the Instantiated Prefab in the cell when painting ... " />
-                <marker date="1582593171450" expanded="true" signature="1238:1715" ph="/// Paints Prefabs into a given position within the selected layers. ... " />
-                <marker date="1582593171450" expanded="true" signature="1812:2981" ph="{...}" />
-                <marker date="1582593171450" expanded="true" signature="1865:1917" ph="{...}" />
-                <marker date="1582593171450" expanded="true" signature="1985:2048" ph="{...}" />
-                <marker date="1582593171450" expanded="true" signature="2532:2971" ph="{...}" />
-                <marker date="1582593171450" expanded="true" signature="2991:3467" ph="/// Erases Prefabs in a given position within the selected layers. ... " />
-                <marker date="1582593171450" expanded="true" signature="3564:4027" ph="{...}" />
-                <marker date="1582593171450" expanded="true" signature="3603:3679" ph="{...}" />
-                <marker date="1582593171450" expanded="true" signature="4133:4457" ph="{...}" />
-                <marker date="1582593171450" expanded="true" signature="4240:4422" ph="{...}" />
-                <marker date="1582593171450" expanded="true" signature="4550:4666" ph="{...}" />
-                <marker date="1582593171450" expanded="true" signature="4678:4755" ph="/// The Brush Editor for a Prefab Brush. ... " />
-                <marker date="1582593171450" expanded="true" signature="4848:6048" ph="{...}" />
-                <marker date="1582593171450" expanded="true" signature="5125:5375" ph="{...}" />
-                <marker date="1582593171450" expanded="true" signature="5385:5607" ph="/// Callback for painting the inspector GUI for the PrefabBrush in the Tile Palette. ... " />
-                <marker date="1582593171450" expanded="true" signature="5658:6042" ph="{...}" />
+                <marker date="1583076455049" expanded="false" signature="6:32" ph="..." />
+                <marker date="1583076455049" expanded="true" signature="79:2603" ph="{...}" />
+                <marker date="1583076455049" expanded="false" signature="86:461" ph="dataFields" />
+                <marker date="1583076455049" expanded="false" signature="467:910" ph="StringToHash" />
+                <marker date="1583076455049" expanded="true" signature="935:978" ph="{...}" />
+                <marker date="1583076455049" expanded="false" signature="1001:1864" ph="InputInUpdate" />
+                <marker date="1583076455049" expanded="true" signature="1040:1723" ph="{...}" />
+                <marker date="1583076455049" expanded="true" signature="1754:1849" ph="{...}" />
+                <marker date="1583076455049" expanded="true" signature="1899:2601" ph="AttackImplementation" />
+                <marker date="1583076455049" expanded="true" signature="1954:2434" ph="{...}" />
+                <marker date="1583076455049" expanded="true" signature="2126:2428" ph="{...}" />
+                <marker date="1583076455049" expanded="true" signature="2181:2328" ph="{...}" />
+                <marker date="1583076455049" expanded="true" signature="2475:2585" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -149,12 +114,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DestructibleTileMap.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Usefull scripts/TranslatableString.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap.extras@0fca71e6b944a80b528ad5662092eb73c1f55214/Editor/Brushes/PrefabBrush/PrefabBrush.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DestructibleTile.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Projectile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Usefull scripts/TranslatableUIText.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -166,6 +131,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DestructibleTile.cs" />
         <option value="$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap.extras@0fca71e6b944a80b528ad5662092eb73c1f55214/Editor/Brushes/PrefabBrush/PrefabBrush.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Damageble.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Usefull scripts/TranslatableUIText.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Usefull scripts/TranslatableString.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
       </list>
     </option>
   </component>
@@ -189,6 +159,26 @@
     </navigator>
     <panes>
       <pane id="UnityExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="8711f2a6:AssetsRoot" />
+            </path>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="8711f2a6:AssetsRoot" />
+              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="8711f2a6:AssetsRoot" />
+              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
+              <item name="Usefull scripts" type="1045f7f1:UnityExplorerNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
         <option name="show-hidden-items" value="false" />
         <option name="show-project-names" value="true" />
       </pane>
@@ -256,11 +246,12 @@
       <workItem from="1580586929724" duration="10498000" />
       <workItem from="1582591976374" duration="19000" />
       <workItem from="1582592638565" duration="1384000" />
+      <workItem from="1583056174319" duration="6609000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20683000" />
+    <option name="totallyTimeSpent" value="27292000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -275,7 +266,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23454158" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23720682" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -319,78 +310,10 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/DestructableTile.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="70" column="5" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
-          <folding>
-            <marker date="1580596832326" expanded="true" signature="63:2390" ph="{...}" />
-            <marker date="1580596832326" expanded="true" signature="708:751" ph="{...}" />
-            <marker date="1580596832326" expanded="true" signature="770:1518" ph="{...}" />
-            <marker date="1580596832326" expanded="true" signature="1587:1682" ph="{...}" />
-            <marker date="1580596832326" expanded="true" signature="1687:1790" ph="Properties" />
-            <marker date="1580596832326" expanded="true" signature="1796:2388" ph="Implementation" />
-            <marker date="1580596832326" expanded="true" signature="1869:2060" ph="{...}" />
-            <marker date="1580596832326" expanded="true" signature="2087:2372" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Projectile.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" column="48" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="48" />
-          <folding>
-            <marker date="1580591693204" expanded="true" signature="99:1591" ph="{...}" />
-            <marker date="1580591693204" expanded="true" signature="106:421" ph="Properties" />
-            <marker date="1580591693204" expanded="true" signature="431:641" ph="Implementation" />
-            <marker date="1580591693204" expanded="true" signature="497:626" ph="{...}" />
-            <marker date="1580591693204" expanded="true" signature="651:1589" ph="Unity callbacks" />
-            <marker date="1580591693204" expanded="true" signature="698:830" ph="{...}" />
-            <marker date="1580591693204" expanded="true" signature="885:1574" ph="{...}" />
-            <marker date="1580591693204" expanded="true" signature="936:1567" ph="{...}" />
-            <marker date="1580591693204" expanded="true" signature="1119:1524" ph="{...}" />
-            <marker date="1580591693204" expanded="true" signature="1274:1494" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/DestructibleTileMap.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="19" column="37" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="37" />
-          <folding>
-            <marker date="1580591356651" expanded="true" signature="6:106" ph="..." />
-            <marker date="1580591356651" expanded="true" signature="155:1165" ph="{...}" />
-            <marker date="1580591356651" expanded="true" signature="162:290" ph="Properties" />
-            <marker date="1580591356651" expanded="true" signature="295:843" ph="Unity callbacks" />
-            <marker date="1580591356651" expanded="true" signature="342:828" ph="{...}" />
-            <marker date="1580591356651" expanded="true" signature="514:821" ph="{...}" />
-            <marker date="1580591356651" expanded="true" signature="610:811" ph="{...}" />
-            <marker date="1580591356651" expanded="true" signature="912:1162" ph="{...}" />
-            <marker date="1580591356651" expanded="true" signature="1050:1156" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/DestructibleTile.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="39" column="47" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
-          <folding>
-            <marker date="1580597575869" expanded="false" signature="6:65" ph="..." />
-            <marker date="1580597575869" expanded="true" signature="103:1352" ph="{...}" />
-            <marker date="1580597575869" expanded="true" signature="110:342" ph="Properties" />
-            <marker date="1580597575869" expanded="true" signature="347:658" ph="Tile Overriding" />
-            <marker date="1580597575869" expanded="true" signature="457:633" ph="{...}" />
-            <marker date="1580597575869" expanded="true" signature="663:924" ph="Implementation" />
-            <marker date="1580597575869" expanded="true" signature="728:909" ph="{...}" />
-            <marker date="1580597575869" expanded="true" signature="929:1350" ph="Asset DataBase" />
-            <marker date="1580597575869" expanded="true" signature="1053:1335" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Projectile.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/DestructibleTileMap.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/DestructibleTile.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/CameraController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -408,8 +331,7 @@
         <state relative-caret-position="306">
           <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
           <folding>
-            <marker date="1582593171450" expanded="true" signature="6:67" ph="..." />
-            <marker date="1582593171450" expanded="true" signature="99:6050" ph="{...}" />
+            <element signature="e#0#67#0" expanded="true" />
             <marker date="1582593171450" expanded="true" signature="106:386" ph="/// This Brush instances and places a randomly selected Prefabs onto the targeted location and parents the instan ... " />
             <marker date="1582593171450" expanded="true" signature="569:4672" ph="{...}" />
             <marker date="1582593171450" expanded="true" signature="638:725" ph="/// The selection of Prefabs to paint from ... " />
@@ -431,6 +353,77 @@
             <marker date="1582593171450" expanded="true" signature="5125:5375" ph="{...}" />
             <marker date="1582593171450" expanded="true" signature="5385:5607" ph="/// Callback for painting the inspector GUI for the PrefabBrush in the Tile Palette. ... " />
             <marker date="1582593171450" expanded="true" signature="5658:6042" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Damageble.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Usefull scripts/TranslatableUIText.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <marker date="1583077255532" expanded="false" signature="6:78" ph="..." />
+            <marker date="1583077255532" expanded="true" signature="128:290" ph="{...}" />
+            <marker date="1583077255532" expanded="true" signature="205:288" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Usefull scripts/TranslatableString.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+          <folding>
+            <marker date="1583077319627" expanded="false" signature="6:78" ph="..." />
+            <marker date="1583077319627" expanded="true" signature="134:743" ph="{...}" />
+            <marker date="1583077319627" expanded="true" signature="378:741" ph="{...}" />
+            <marker date="1583077319627" expanded="true" signature="473:638" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Enemy.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+          <folding>
+            <marker date="1583088518511" expanded="true" signature="6:78" ph="..." />
+            <marker date="1583088518511" expanded="true" signature="113:1783" ph="{...}" />
+            <marker date="1583088518511" expanded="false" signature="125:370" ph="dataFields" />
+            <marker date="1583088518511" expanded="false" signature="375:818" ph="StringToHash" />
+            <marker date="1583088518511" expanded="true" signature="876:1487" ph="{...}" />
+            <marker date="1583088518511" expanded="true" signature="1335:1423" ph="{...}" />
+            <marker date="1583088518511" expanded="true" signature="1523:1618" ph="{...}" />
+            <marker date="1583088518511" expanded="true" signature="1662:1781" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="66" column="44" lean-forward="true" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
+          <folding>
+            <marker date="1583076455049" expanded="false" signature="6:32" ph="..." />
+            <marker date="1583076455049" expanded="true" signature="79:2603" ph="{...}" />
+            <marker date="1583076455049" expanded="false" signature="86:461" ph="dataFields" />
+            <marker date="1583076455049" expanded="false" signature="467:910" ph="StringToHash" />
+            <marker date="1583076455049" expanded="true" signature="935:978" ph="{...}" />
+            <marker date="1583076455049" expanded="false" signature="1001:1864" ph="InputInUpdate" />
+            <marker date="1583076455049" expanded="true" signature="1040:1723" ph="{...}" />
+            <marker date="1583076455049" expanded="true" signature="1754:1849" ph="{...}" />
+            <marker date="1583076455049" expanded="true" signature="1899:2601" ph="AttackImplementation" />
+            <marker date="1583076455049" expanded="true" signature="1954:2434" ph="{...}" />
+            <marker date="1583076455049" expanded="true" signature="2126:2428" ph="{...}" />
+            <marker date="1583076455049" expanded="true" signature="2181:2328" ph="{...}" />
+            <marker date="1583076455049" expanded="true" signature="2475:2585" ph="{...}" />
           </folding>
         </state>
       </provider>

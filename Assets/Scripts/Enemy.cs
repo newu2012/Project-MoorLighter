@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : Damageble
+public class Enemy : HealthSystem
 {
     
     #region dataFields
@@ -15,7 +15,6 @@ public class Enemy : Damageble
     private float dazedTime;
     public float startDazedTime;
     #endregion
-    
     #region StringToHash
     private static readonly int LastHorizontal = Animator.StringToHash("LastHorizontal");
     private static readonly int LastVertical = Animator.StringToHash("LastVertical");
@@ -23,11 +22,6 @@ public class Enemy : Damageble
     private static readonly int Vertical = Animator.StringToHash("Vertical");
     private static readonly int Speed = Animator.StringToHash("Speed");
     #endregion
-    void Start()
-    {
-        //animator = GetComponent<Animator>();
-        //animator.SetBool("isRunning", true);
-    }
 
     // Update is called once per frame
     void Update()
@@ -57,7 +51,7 @@ public class Enemy : Damageble
         rb.MovePosition(rb.position + moveSpeed * Time.fixedDeltaTime * movement);
     }
 
-    public void TakeDamage(int damage)
+    public new void TakeDamage(int damage)
     {
         dazedTime = startDazedTime;
         health -= damage;

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  moveSpeed: 2
+  moveSpeed: 1
   rb: {fileID: 6058964033055034918}
   animator: {fileID: 6058964033055034915}
-  startDazedTime: 0
+  startDazedTime: 0.5
 --- !u!1001 &5214926467828681744
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -95,6 +95,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4025949689559072613, guid: f4875e6a3f74e5a428bd702c5264568f,
         type: 3}
+    - target: {fileID: 2038688422749209139, guid: 126894f9643301b43ad021d64bc5cf8c,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8d82040ab95ea364ca9a3a23a60a0b7f, type: 2}
     - target: {fileID: 2038688422749209140, guid: 126894f9643301b43ad021d64bc5cf8c,
         type: 3}
       propertyPath: m_Name
@@ -103,7 +108,17 @@ PrefabInstance:
     - target: {fileID: 2038688422749209140, guid: 126894f9643301b43ad021d64bc5cf8c,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2038688422749209140, guid: 126894f9643301b43ad021d64bc5cf8c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2038688422749209142, guid: 126894f9643301b43ad021d64bc5cf8c,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1978191647384271640, guid: 126894f9643301b43ad021d64bc5cf8c, type: 3}

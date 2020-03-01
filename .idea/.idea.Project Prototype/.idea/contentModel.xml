@@ -138,9 +138,13 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="CameraController.cs" t="Include" />
-          <e p="Damageble.cs" t="Include" />
           <e p="Enemy.cs" t="Include" />
+          <e p="HealthSystem.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
+          <e p="Usefull scripts" t="Include">
+            <e p="TranslatableString.cs" t="Include" />
+            <e p="TranslatableUIText.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />

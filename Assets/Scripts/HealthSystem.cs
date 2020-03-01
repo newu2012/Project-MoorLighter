@@ -2,14 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Damageble : MonoBehaviour
+public class HealthSystem : MonoBehaviour
 {
     public int health;
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
