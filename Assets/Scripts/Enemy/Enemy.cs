@@ -10,8 +10,8 @@ public class Enemy : HealthSystem
     public float moveSpeed = 1f;
     public Rigidbody2D rb;
     public Animator animator;
-    private Vector2 movement;
-    private Vector2 lastDir;
+    public Vector2 movement;
+    public Vector2 lastDir;
     private float dazedTime;
     public float startDazedTime;
     #endregion
@@ -26,9 +26,9 @@ public class Enemy : HealthSystem
     // Update is called once per frame
     void Update()
     {
-        movement.x = 1;
         if (movement.magnitude > 0)
             lastDir = movement;
+        
         movement.Normalize();
         animator.SetFloat(LastHorizontal, lastDir.x);
         animator.SetFloat(LastVertical, lastDir.y);
@@ -42,6 +42,7 @@ public class Enemy : HealthSystem
             moveSpeed = 0;
             dazedTime -= Time.deltaTime;
         }
+        
         if (health <= 0)
             Destroy(gameObject);
     }

@@ -137,13 +137,23 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="CameraController.cs" t="Include" />
-          <e p="Enemy.cs" t="Include" />
+          <e p="Enemy" t="Include">
+            <e p="Enemy.cs" t="Include" />
+            <e p="EnemyAI.cs" t="Include" />
+            <e p="EnemyPathfindingMovement.cs" t="Include" />
+          </e>
           <e p="HealthSystem.cs" t="Include" />
-          <e p="PlayerController.cs" t="Include" />
+          <e p="Player" t="Include">
+            <e p="PlayerController.cs" t="Include" />
+          </e>
           <e p="Usefull scripts" t="Include">
             <e p="TranslatableString.cs" t="Include" />
             <e p="TranslatableUIText.cs" t="Include" />
+          </e>
+          <e p="Utilities" t="Include">
+            <e p="CameraController.cs" t="Include" />
+            <e p="FunctionUpdater.cs" t="Include" />
+            <e p="Utils.cs" t="Include" />
           </e>
         </e>
       </e>
