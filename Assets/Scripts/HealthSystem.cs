@@ -12,9 +12,7 @@ public class HealthSystem : MonoBehaviour
     public HealthBar healthBar;
     private void Start()
     {
-        Debug.Log(gameObject.name);
         currentHealth = maxHealth;
-        Debug.Log(currentHealth);
     }
 
     private void Update()

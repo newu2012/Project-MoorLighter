@@ -12,7 +12,7 @@ public class PlayerController : HealthSystem
     private float attackRate = 0.5f;
     private Vector2 lastDir;
     public Transform attackPos;
-    public LayerMask whatIsEnemies;
+    //public LayerMask whatIsEnemies;
     public float attackRange;
     public int damage;
     private Camera _camera;
@@ -27,7 +27,6 @@ public class PlayerController : HealthSystem
     #endregion
     private void Start()
     {
-        Debug.Log(gameObject.name);
         healthBar = GameObject.FindWithTag("PlayerHealthSphere").GetComponent<HealthBar>();
         currentHealth = maxHealth;
         _camera = Camera.main;
@@ -69,12 +68,12 @@ public class PlayerController : HealthSystem
 
     private void Attack()
     {
-        var subjectsToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
+        var subjectsToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange);
         foreach (var subject in subjectsToDamage)
         {
             if (subject.CompareTag("Enemy"))
                 subject.GetComponent<Enemy>().TakeDamage(damage);
-            else
+            else if (subject.CompareTag("Tree"))
                 subject.GetComponent<HealthSystem>().TakeDamage(damage);
         }
     }
