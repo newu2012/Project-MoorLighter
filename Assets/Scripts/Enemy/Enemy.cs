@@ -43,7 +43,7 @@ public class Enemy : HealthSystem
             dazedTime -= Time.deltaTime;
         }
         
-        if (health <= 0)
+        if (currentHealth <= 0)
             Destroy(gameObject);
     }
     
@@ -55,7 +55,7 @@ public class Enemy : HealthSystem
     public new void TakeDamage(int damage)
     {
         dazedTime = startDazedTime;
-        health -= damage;
+        currentHealth -= damage;
         Debug.Log(damage + " damage taken");
     }
 }

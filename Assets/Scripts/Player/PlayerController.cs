@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : HealthSystem
 {
     #region dataFields
     private const float moveSpeed = 2f;

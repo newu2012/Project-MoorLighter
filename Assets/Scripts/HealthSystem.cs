@@ -1,20 +1,30 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
-    public int health;
-    // Update is called once per frame
+    public int maxHealth;
+    [HideInInspector] public int currentHealth;
+
+    public HealthBar healthBar;
+    private void Start()
+    {
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+    }
+
     void Update()
     {
-        if (health <= 0)
+        if (currentHealth <= 0)
             Destroy(gameObject);
     }
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
         Debug.Log(damage + " damage taken");
     }
 }

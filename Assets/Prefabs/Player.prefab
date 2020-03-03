@@ -163,6 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a45178fc49b6d7f49a199d79527b3128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 25
+  currentHealth: 0
+  healthBar: {fileID: 0}
   rb: {fileID: 2038688422749209142}
   animator: {fileID: 2038688422749209139}
   attackPos: {fileID: 2038688422749209136}

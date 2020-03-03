@@ -142,6 +142,7 @@
             <e p="EnemyAI.cs" t="Include" />
             <e p="EnemyPathfindingMovement.cs" t="Include" />
           </e>
+          <e p="HealthBar.cs" t="Include" />
           <e p="HealthSystem.cs" t="Include" />
           <e p="Player" t="Include">
             <e p="PlayerController.cs" t="Include" />
