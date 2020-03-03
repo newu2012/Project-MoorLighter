@@ -6,16 +6,18 @@ using UnityEngine;
 public class HealthSystem : MonoBehaviour
 {
     public int maxHealth;
-    [HideInInspector] public int currentHealth;
+    //[HideInInspector] public int currentHealth;
+    public int currentHealth;
 
     public HealthBar healthBar;
     private void Start()
     {
+        Debug.Log(gameObject.name);
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        Debug.Log(currentHealth);
     }
 
-    void Update()
+    private void Update()
     {
         if (currentHealth <= 0)
             Destroy(gameObject);
@@ -24,7 +26,8 @@ public class HealthSystem : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
+        healthBar.SetHealth(currentHealth/(float)maxHealth);
         Debug.Log(damage + " damage taken");
+        Debug.Log(currentHealth/(float)maxHealth*100 + " % health now");
     }
 }

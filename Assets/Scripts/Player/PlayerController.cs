@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerController : HealthSystem
 {
     #region dataFields
+
     private const float moveSpeed = 2f;
     public Rigidbody2D rb;
     public Animator animator;
@@ -26,11 +27,15 @@ public class PlayerController : HealthSystem
     #endregion
     private void Start()
     {
+        Debug.Log(gameObject.name);
+        healthBar = GameObject.FindWithTag("PlayerHealthSphere").GetComponent<HealthBar>();
+        currentHealth = maxHealth;
         _camera = Camera.main;
     }
     //Basic Input
     #region InputInUpdate
-    void Update()
+
+    private void Update()
     {
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
@@ -43,6 +48,9 @@ public class PlayerController : HealthSystem
         
         if (Input.GetMouseButtonUp(0))
             CancelInvoke(nameof(Attack));
+        
+        if (Input.GetKeyDown(KeyCode.Space))
+            TakeDamage(5);
         
         animator.SetFloat(LastHorizontal, lastDir.x);
         animator.SetFloat(LastVertical, lastDir.y);
@@ -61,7 +69,7 @@ public class PlayerController : HealthSystem
 
     private void Attack()
     {
-        Collider2D[] subjectsToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
+        var subjectsToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
         foreach (var subject in subjectsToDamage)
         {
             if (subject.CompareTag("Enemy"))

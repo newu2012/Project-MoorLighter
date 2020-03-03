@@ -7,12 +7,7 @@ public class HealthBar : MonoBehaviour
 {
     public Image fill;
 
-    public void SetMaxHealth(int health)
-    {
-        fill.fillAmount = health;
-    }
-
-    public void SetHealth(int health)
+    public void SetHealth(float health)
     {
         fill.fillAmount = health;
     }

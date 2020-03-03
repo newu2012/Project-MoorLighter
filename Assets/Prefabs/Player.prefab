@@ -165,7 +165,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 25
   currentHealth: 0
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 9143163711185256719, guid: 83f79a867a67c5b4888accd94793e721,
+    type: 3}
   rb: {fileID: 2038688422749209142}
   animator: {fileID: 2038688422749209139}
   attackPos: {fileID: 2038688422749209136}
