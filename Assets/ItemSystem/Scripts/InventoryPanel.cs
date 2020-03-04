@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventaryPanel : MonoBehaviour
+public class InventoryPanel : MonoBehaviour
 {
     public Canvas canvas;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         canvas = GetComponent<Canvas>();
         canvas.enabled = false;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
             canvas.enabled = !canvas.enabled;

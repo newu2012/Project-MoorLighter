@@ -8,21 +8,21 @@ public class ItemInspector : Editor
 {
     public override void OnInspectorGUI()
     {
-        Item currenItem = (Item)target;
+        var currentItem = (Item)target;
 
-        currenItem.ItemName = EditorGUILayout.TextField("Item name", currenItem.ItemName);
-        currenItem.ItemImage = (Sprite)EditorGUILayout.ObjectField(currenItem.ItemImage, typeof(Sprite), GUILayout.Width(100), GUILayout.Height(100));
-        currenItem.Item_Type = (Item.ItemType)EditorGUILayout.EnumPopup("Item type", currenItem.Item_Type);
-        currenItem.MaxInInventory = EditorGUILayout.IntField("Max in inventary", currenItem.MaxInInventory);
-        currenItem.Count = EditorGUILayout.IntField("Count", currenItem.Count);
+        currentItem.ItemName = EditorGUILayout.TextField("Item name", currentItem.ItemName);
+        currentItem.ItemImage = (Sprite)EditorGUILayout.ObjectField(currentItem.ItemImage, typeof(Sprite), GUILayout.Width(100), GUILayout.Height(100));
+        currentItem.Item_Type = (Item.ItemType)EditorGUILayout.EnumPopup("Item type", currentItem.Item_Type);
+        currentItem.MaxInInventory = EditorGUILayout.IntField("Max in inventory", currentItem.MaxInInventory);
+        currentItem.Count = EditorGUILayout.IntField("Count", currentItem.Count);
 
-        if (currenItem.Item_Type == Item.ItemType.Equipment)
+        if (currentItem.Item_Type == Item.ItemType.Equipment)
         {
-            currenItem.Equipment_Type = (Item.EquipmentType)EditorGUILayout.EnumPopup("Equipment Type", currenItem.Equipment_Type);
-            if (currenItem.Equipment_Type == Item.EquipmentType.Armor)
-                currenItem.Armor = EditorGUILayout.IntField("Armor", currenItem.Armor);
+            currentItem.Equipment_Type = (Item.EquipmentType)EditorGUILayout.EnumPopup("Equipment Type", currentItem.Equipment_Type);
+            if (currentItem.Equipment_Type == Item.EquipmentType.Armor)
+                currentItem.Armor = EditorGUILayout.IntField("Armor", currentItem.Armor);
             else
-                currenItem.Damage = EditorGUILayout.IntField("Damage", currenItem.Damage);
+                currentItem.Damage = EditorGUILayout.IntField("Damage", currentItem.Damage);
         }   
     }
 }

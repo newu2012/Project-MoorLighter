@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/ItemSystem.meta
 guid: 8f75dee9d33167a4abd91bb39fcdd844
-=======
-guid: d47e629262c27ae47b1403cee96496aa
->>>>>>> 4631d7f72817a4910ce0ea76aa74403cedef9623:Assets/Scripts/Player.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

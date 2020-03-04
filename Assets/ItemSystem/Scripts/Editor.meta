@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/ItemSystem/Scripts/Editor.meta
 guid: 8971774eaf1dd6a4ea4adccbbe772b93
-=======
-guid: d1108b02334c50d4cb7f6c4a2fa093e6
->>>>>>> 4631d7f72817a4910ce0ea76aa74403cedef9623:Assets/Scripts/Enemy.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
