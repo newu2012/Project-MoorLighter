@@ -136,6 +136,18 @@
             </e>
           </e>
         </e>
+        <e p="ItemSystem" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="CharacterInventory.cs" t="Include" />
+            <e p="Editor" t="Include">
+              <e p="ItemInspector.cs" t="Include" />
+            </e>
+            <e p="InventoryPanel.cs" t="Include" />
+            <e p="Item.cs" t="Include" />
+            <e p="ShowInformation.cs" t="Include" />
+            <e p="Translate.cs" t="Include" />
+          </e>
+        </e>
         <e p="Scripts" t="Include">
           <e p="Enemy" t="Include">
             <e p="Enemy.cs" t="Include" />
