@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8730dfb174c86dd4082a9489817f77ac, type: 3}
   m_Name: Rock
   m_EditorClassIdentifier: 
-  ItemName: "\u041A\u0430\u043C\u0435\u043D\u044C"
-  ItemImage: {fileID: 7011242366488613652, guid: 093e9534a45932e4a9956722cdfecbac,
-    type: 3}
-  Item_Type: 1
+  ItemName: 
+  ItemImage: {fileID: 0}
+  Item_Type: 0
   Equipment_Type: 0
   Damage: 0
   Armor: 0
-  MaxInInventory: 13
-  Count: 1
+  MaxInInventory: 0
+  Count: 0

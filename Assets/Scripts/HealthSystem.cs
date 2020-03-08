@@ -10,6 +10,7 @@ public class HealthSystem : MonoBehaviour
     public int currentHealth;
 
     public HealthBar healthBar;
+    public GameObject resourcePrefab;
     private void Start()
     {
         currentHealth = maxHealth;
@@ -18,7 +19,12 @@ public class HealthSystem : MonoBehaviour
     private void Update()
     {
         if (currentHealth <= 0)
+        {
             Destroy(gameObject);
+            if (resourcePrefab == null)
+                return;
+            Instantiate(resourcePrefab, transform.position, Quaternion.identity);
+        }
     }
 
     public void TakeDamage(int damage)

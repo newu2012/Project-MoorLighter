@@ -302,6 +302,8 @@ MonoBehaviour:
   maxHealth: 5
   currentHealth: 0
   healthBar: {fileID: 6723977564048896669}
+  resourcePrefab: {fileID: 5651385844531088586, guid: 32434806bb843f849ab0a37e50f9201e,
+    type: 3}
 --- !u!1001 &5271518855355900580
 PrefabInstance:
   m_ObjectHideFlags: 0
