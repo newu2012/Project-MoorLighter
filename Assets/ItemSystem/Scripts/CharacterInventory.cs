@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 public class CharacterInventory : MonoBehaviour
 {
     public Item[] InitialCharacterItems;
-    [FormerlySerializedAs("inventaryPanel")] public InventoryPanel inventoryPanel;
+    [FormerlySerializedAs("inventaryPanel")] public GameObject inventoryPanel;
     [FormerlySerializedAs("inventaryResourceItems")] public List<Item> inventoryResourceItems = new List<Item>();
     [FormerlySerializedAs("inventaryEquipmentItems")] public List<Item> inventoryEquipmentItems = new List<Item>();
     [FormerlySerializedAs("inventaryConstructionsItems")] public List<Item> inventoryConstructionsItems = new List<Item>();
@@ -46,7 +46,7 @@ public class CharacterInventory : MonoBehaviour
         if (List.Count < 7)
         {
             List.Add(CopyItem(itemToAdd));
-            inventoryPanel.AddItem(itemToAdd, List.Count - 1);
+            inventoryPanel.GetComponent<InventoryPanel>().AddItem(itemToAdd, List.Count - 1);
         }
     }
 

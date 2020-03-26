@@ -27,4 +27,16 @@ public class InventoryPanel : MonoBehaviour
         gameO.color = new Color(255, 255, 255, 1);
         gameO.sprite = item.ItemImage;
     }
+
+    public void UpdatePanel(int position, string type)
+    {
+        for (var i = position; i < 6; i ++)
+        {
+            var gameOCurrent = GameObject.Find("Image" + type + i.ToString()).GetComponent<Image>();
+            gameOCurrent.color = new Color(255, 255, 255, 1);
+            var gameONext = GameObject.Find("Image" + type + (i + 1).ToString()).GetComponent<Image>();
+            gameOCurrent.sprite = gameONext.sprite;
+        }
+        GameObject.Find("Image" + type + 6.ToString()).GetComponent<Image>().sprite = null;
+    }
 }
