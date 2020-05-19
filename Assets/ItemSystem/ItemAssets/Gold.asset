@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8730dfb174c86dd4082a9489817f77ac, type: 3}
-  m_Name: Wood
+  m_Name: Gold
   m_EditorClassIdentifier: 
-  ItemName: "\u0414\u0435\u0440\u0435\u0432\u043E"
-  ItemImage: {fileID: 8717505079954003382, guid: e145cd904acbb4a4fb3fa04d5f7d3bb8,
-    type: 3}
+  ItemName: Gold
+  ItemImage: {fileID: 21300000, guid: 085cf84157c53a348a33035d2bf4f77b, type: 3}
   Item_Type: 1
   Equipment_Type: 0
   Damage: 0
