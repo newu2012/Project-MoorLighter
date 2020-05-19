@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8730dfb174c86dd4082a9489817f77ac, type: 3}
-  m_Name: Rock
+  m_Name: Log
   m_EditorClassIdentifier: 
-  ItemName: 
-  ItemImage: {fileID: 0}
-  Item_Type: 0
+  ItemName: "\u041F\u043E\u043B\u0435\u043D\u043E"
+  ItemImage: {fileID: 21300000, guid: 72f43c144278a214eb8bafcb346801ed, type: 3}
+  Item_Type: 1
   Equipment_Type: 0
   Damage: 0
   Armor: 0
-  MaxInInventory: 0
-  Count: 0
+  MaxInInventory: 10
+  Count: 1

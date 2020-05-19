@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 public class CharacterInventory : MonoBehaviour
 {
     public Item[] InitialCharacterItems;
-    [FormerlySerializedAs("inventaryPanel")] public InventoryPanel inventoryPanel;
+    [FormerlySerializedAs("inventaryPanel")] public GameObject inventoryPanel;
     [FormerlySerializedAs("inventaryResourceItems")] public List<Item> inventoryResourceItems = new List<Item>();
     [FormerlySerializedAs("inventaryEquipmentItems")] public List<Item> inventoryEquipmentItems = new List<Item>();
     [FormerlySerializedAs("inventaryConstructionsItems")] public List<Item> inventoryConstructionsItems = new List<Item>();
@@ -38,15 +38,29 @@ public class CharacterInventory : MonoBehaviour
     public void AddToList(Item itemToAdd, List<Item> List)
     {
         foreach (var item in List)
-            if (item.name.CompareTo(itemToAdd.name) == 0 && item.Count < item.MaxInInventory)
+            if (item.ItemName.CompareTo(itemToAdd.ItemName) == 0 && item.Count < item.MaxInInventory)
             {
                 item.Count++;
                 return;
             }
         if (List.Count < 7)
         {
-            List.Add(itemToAdd);
-            inventoryPanel.AddItem(itemToAdd, List.Count - 1);
+            List.Add(CopyItem(itemToAdd));
+            inventoryPanel.GetComponent<InventoryPanel>().AddItem(itemToAdd, List.Count - 1);
         }
+    }
+
+    public Item CopyItem(Item item)
+    {
+        var result = ScriptableObject.CreateInstance<Item>();
+        result.ItemName = item.ItemName;
+        result.ItemImage = item.ItemImage;
+        result.Item_Type = item.Item_Type;
+        result.Equipment_Type = item.Equipment_Type;
+        result.Damage = item.Damage;
+        result.Armor = item.Armor;
+        result.MaxInInventory = item.MaxInInventory;
+        result.Count = item.Count;
+        return result;
     }
 }

@@ -32,14 +32,18 @@ public class ShowInformation : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        
+        Show();
+    }
+
+    public void Show()
+    {
         var objectName = gameObject.name;
         var type = objectName.Substring(5, objectName.Length - 6);
         var count = int.Parse(objectName[objectName.Length - 1].ToString());
         
-        if (type == Item.ItemType.Resource.ToString() && count > player.GetComponent<CharacterInventory>().inventoryResourceItems.Count ||
-            type == Item.ItemType.Equipment.ToString() && count > player.GetComponent<CharacterInventory>().inventoryEquipmentItems.Count ||
-            type == Item.ItemType.Constructions.ToString() && count > player.GetComponent<CharacterInventory>().inventoryConstructionsItems.Count)
+        if (type == Item.ItemType.Resource.ToString() && count >= player.GetComponent<CharacterInventory>().inventoryResourceItems.Count ||
+            type == Item.ItemType.Equipment.ToString() && count >= player.GetComponent<CharacterInventory>().inventoryEquipmentItems.Count ||
+            type == Item.ItemType.Constructions.ToString() && count >= player.GetComponent<CharacterInventory>().inventoryConstructionsItems.Count)
             return;
         
         Item currentItem;
