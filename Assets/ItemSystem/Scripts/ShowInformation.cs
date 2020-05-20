@@ -32,7 +32,11 @@ public class ShowInformation : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        
+        Show();
+    }
+
+    public void Show()
+    {
         var objectName = gameObject.name;
         var type = objectName.Substring(5, objectName.Length - 6);
         var count = int.Parse(objectName[objectName.Length - 1].ToString());

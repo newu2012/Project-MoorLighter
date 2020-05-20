@@ -15,6 +15,7 @@ public class PlayerController : HealthSystem
     //public LayerMask whatIsEnemies;
     public float attackRange;
     public int damage;
+    public int armor;
     private Camera _camera;
     #endregion
 
@@ -82,6 +83,26 @@ public class PlayerController : HealthSystem
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPos.position, attackRange);
+    }
+
+    #endregion
+
+
+    #region ChangeFastAccess
+    public void ChangeDamage(int damage, bool join)
+    {
+        if (join)
+            this.damage += damage;
+        else
+            this.damage -= damage;
+    }
+
+    public void ChangeArmor(int armor, bool join)
+    {
+        if (join)
+            this.armor += armor;
+        else
+            this.armor -= armor;
     }
 
     #endregion
