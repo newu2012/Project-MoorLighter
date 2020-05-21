@@ -604,7 +604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d510b8fae0dcf244a81e17026d68f257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unityData: {fileID: 11400000, guid: e493590d2ff98aa45aae41afe25aca60, type: 2}
+  unityData: {fileID: 11400000, guid: 0b78b8713e4076a44bd0c45f483d23bf, type: 2}
   armatureName: Armature
   armatureBaseName: 
   isUGUI: 0

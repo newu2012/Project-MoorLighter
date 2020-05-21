@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Walk_Data
   m_EditorClassIdentifier: 
   dataName: Walk
-  dragonBonesJSON: {fileID: 4900000, guid: 2321a7af920feff419be17c43019e76d, type: 3}
+  dragonBonesJSON: {fileID: 4900000, guid: 092493b12b86ce64fa7eddd65a14fecb, type: 3}
   textureAtlas:
   - textureAtlasJSON: {fileID: 4900000, guid: 41573e51ab9764b40ae2079d2af9bc37, type: 3}
     texture: {fileID: 2800000, guid: 3349379c2ef15354fa93bed99d10b266, type: 3}

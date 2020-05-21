@@ -1,8 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using DragonBones;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 using Transform = UnityEngine.Transform;
 
 public enum BattleState { START, PLAYERTURN, PLAYER_CHOOSED_ACTION, ENEMYTURN, WON, LOST }
@@ -13,6 +16,7 @@ public class BattleSystem : MonoBehaviour
 	public GameObject playerPrefab;
 	private GameObject playerGO;
 	public GameObject enemyPrefab;
+	private GameObject enemyGO;
 
 	public Transform playerBattleStation;
 	public Transform enemyBattleStation;
@@ -27,10 +31,13 @@ public class BattleSystem : MonoBehaviour
 
 	public BattleState state;
 
-	public Image dialogueImage;
+	public GameObject dialoguePanel;
 	public bool dialogueSwitch = true;
 
-    // Start is called before the first frame update
+	public GameObject[] Panels;
+	private int PanelIndex;
+
+	// Start is called before the first frame update
     void Start()
     {
 		state = BattleState.START;
@@ -46,7 +53,7 @@ public class BattleSystem : MonoBehaviour
 		playerGO.transform.localScale = new Vector3(0.125f, 0.125f, 0);
 		playerGO.transform.position = new Vector3(-6, -0.5f, 0);
 		
-		GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
+		enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
 		enemyUnit = enemyGO.GetComponent<BattleUnit>();
 		enemyGO.transform.localScale = new Vector3(0.25f, 0.25f, 0);
 		enemyGO.transform.position = new Vector3(6, -1f, 0);
@@ -104,7 +111,6 @@ public class BattleSystem : MonoBehaviour
 			state = BattleState.PLAYERTURN;
 			PlayerTurn();
 		}
-
 	}
 
 	void EndBattle()
@@ -197,15 +203,6 @@ public class BattleSystem : MonoBehaviour
 		StartCoroutine(PlayerHeal());
 	}
 
-	public void OnMagicButton()
-	{
-		Debug.Log("Read the scroll!");
-		if (state != BattleState.PLAYERTURN && state != BattleState.PLAYER_CHOOSED_ACTION)
-			return;
-
-		StartCoroutine(PlayerMagic());
-	}
-
 	public void OnWaitButton()
 	{
 		Debug.Log("Wait one round!");
@@ -214,32 +211,39 @@ public class BattleSystem : MonoBehaviour
 
 		StartCoroutine(PlayerWait());
 	}
+
+	public void ReturnToBasePanel()
+	{
+		Panels[0].GetComponent<CanvasGroup>().alpha = 1;
+		Panels[0].SetActive(true);
+				
+		Panels[PanelIndex].GetComponent<CanvasGroup>().alpha = 0;
+		Panels[PanelIndex].SetActive(false);
+		PanelIndex = 0;
+	}
+	public void ChangePanels(int newIndex)
+	{
+		Panels[newIndex].GetComponent<CanvasGroup>().alpha = 1;
+		Panels[newIndex].SetActive(true);
+			
+		Panels[PanelIndex].GetComponent<CanvasGroup>().alpha = 0;
+		Panels[PanelIndex].SetActive(false);
+		PanelIndex = newIndex;
+	}
 	
 	public void ChangeDialogueState()
 	{
 		if (dialogueSwitch)
 		{
-			var color = dialogueImage.color;
-			color = new Color(color.r, color.g, color.b, 0f );
-			dialogueImage.color = color;
-			dialogueText.text = "";
+			dialoguePanel.GetComponent<CanvasGroup>().alpha = 0;
+			dialoguePanel.SetActive(false);
 			dialogueSwitch = false;
-			dialogueImage.gameObject.SetActive(false);
-			dialogueText.gameObject.SetActive(false);
-			return;
 		}
 		else
 		{
-			var color = dialogueImage.color;
-			color = new Color(color.r, color.g, color.b, 1f );
-			dialogueImage.color = color;
-			dialogueText.text = "";
+			dialoguePanel.GetComponent<CanvasGroup>().alpha = 1;
+			dialoguePanel.SetActive(true);
 			dialogueSwitch = true;
-			dialogueImage.enabled = dialogueSwitch;
-			dialogueText.enabled = dialogueSwitch;
-			dialogueImage.gameObject.SetActive(true);
-			dialogueText.gameObject.SetActive(true);
-			return;
 		}
 	}
 }
