@@ -661,8 +661,8 @@ MonoBehaviour:
   unitName: Player
   unitLevel: 1
   damage: 5
-  maxHP: 10
-  currentHP: 10
+  maxHP: 15
+  currentHP: 15
 --- !u!1 &3139141812776517594
 GameObject:
   m_ObjectHideFlags: 0

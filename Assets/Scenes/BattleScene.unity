@@ -472,8 +472,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 3139141812736323428, guid: cfc765f10e97e1a48bc2e8d586980700,
     type: 3}
-  enemyPrefab: {fileID: 6110362572899128629, guid: ff88d19c705b31f4883fafcd9518e470,
-    type: 3}
+  enemyPrefab: {fileID: 2065672737}
+  enemyAnimator: {fileID: 2065672739}
   playerBattleStation: {fileID: 463577519}
   enemyBattleStation: {fileID: 2125221396}
   dialogueText: {fileID: 1321778176}
@@ -583,7 +583,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 175727497}
-        m_MethodName: OnWaitButton
+        m_MethodName: OnHealButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1778,7 +1778,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041C\u0430\u0433\u0438\u044F \u0438\u0441\u0446\u0435\u043B\u0435\u043D\u0438\u044F"
+  m_Text: "\u041C\u0430\u0433\u0438\u044F \u043C\u043E\u043B\u043D\u0438\u0439"
 --- !u!222 &487562145
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1870,14 +1870,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 175727497}
-        m_MethodName: OnHealButton
-        m_Mode: 1
+        m_MethodName: OnMagicButton
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: water
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &515990589
@@ -3505,7 +3505,7 @@ GameObject:
   - component: {fileID: 1359887519}
   - component: {fileID: 1359887518}
   m_Layer: 0
-  m_Name: Heal
+  m_Name: Lightning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3575,14 +3575,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 175727497}
-        m_MethodName: OnWaitButton
-        m_Mode: 1
+        m_MethodName: OnMagicButton
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: lightning
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1359887519
@@ -3957,6 +3957,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1555742325}
   m_CullTransparentMesh: 0
+--- !u!1001 &1610581066
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8673161648159941630, guid: f584671027a33b04d81bcdb89ea23304,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673161648159941630, guid: f584671027a33b04d81bcdb89ea23304,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673161648159941630, guid: f584671027a33b04d81bcdb89ea23304,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673161648159941630, guid: f584671027a33b04d81bcdb89ea23304,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673161648159941630, guid: f584671027a33b04d81bcdb89ea23304,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673161648159941630, guid: f584671027a33b04d81bcdb89ea23304,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673161648159941630, guid: f584671027a33b04d81bcdb89ea23304,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673161648159941630, guid: f584671027a33b04d81bcdb89ea23304,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673161648159941630, guid: f584671027a33b04d81bcdb89ea23304,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673161648159941630, guid: f584671027a33b04d81bcdb89ea23304,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673161648159941630, guid: f584671027a33b04d81bcdb89ea23304,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954503911434845671, guid: f584671027a33b04d81bcdb89ea23304,
+        type: 3}
+      propertyPath: m_Name
+      value: Volk
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f584671027a33b04d81bcdb89ea23304, type: 3}
 --- !u!1 &1698873818
 GameObject:
   m_ObjectHideFlags: 0
@@ -4606,14 +4675,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 175727497}
-        m_MethodName: OnAttackButton
-        m_Mode: 1
+        m_MethodName: OnMagicButton
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: fire
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1954538563
@@ -4905,6 +4974,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &2065672737 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8954503911434845671, guid: f584671027a33b04d81bcdb89ea23304,
+    type: 3}
+  m_PrefabInstance: {fileID: 1610581066}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2065672739 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5838224064386306711, guid: f584671027a33b04d81bcdb89ea23304,
+    type: 3}
+  m_PrefabInstance: {fileID: 1610581066}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2125221394
 GameObject:
   m_ObjectHideFlags: 0

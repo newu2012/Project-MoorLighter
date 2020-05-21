@@ -5,18 +5,22 @@ using DragonBones;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
 using Image = UnityEngine.UI.Image;
+using Random = System.Random;
 using Transform = UnityEngine.Transform;
 
 public enum BattleState { START, PLAYERTURN, PLAYER_CHOOSED_ACTION, ENEMYTURN, WON, LOST }
 
 public class BattleSystem : MonoBehaviour
 {
-
 	public GameObject playerPrefab;
 	private GameObject playerGO;
+	
+	
 	public GameObject enemyPrefab;
 	private GameObject enemyGO;
+	public Animator enemyAnimator;
 
 	public Transform playerBattleStation;
 	public Transform enemyBattleStation;
@@ -37,6 +41,8 @@ public class BattleSystem : MonoBehaviour
 	public GameObject[] Panels;
 	private int PanelIndex;
 
+	private static readonly int Attacking = Animator.StringToHash("Attacking");
+	
 	// Start is called before the first frame update
     void Start()
     {
@@ -53,10 +59,11 @@ public class BattleSystem : MonoBehaviour
 		playerGO.transform.localScale = new Vector3(0.125f, 0.125f, 0);
 		playerGO.transform.position = new Vector3(-6, -0.5f, 0);
 		
-		enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
+		//enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
+		enemyGO = GameObject.Find("Volk");
 		enemyUnit = enemyGO.GetComponent<BattleUnit>();
-		enemyGO.transform.localScale = new Vector3(0.25f, 0.25f, 0);
-		enemyGO.transform.position = new Vector3(6, -1f, 0);
+		//enemyGO.transform.localScale = new Vector3(0.25f, 0.25f, 0);
+		//enemyGO.transform.position = new Vector3(6, -1f, 0);
 		
 		dialogueText.text = "A wild " + enemyUnit.unitName + " approaches...";
 
@@ -71,13 +78,18 @@ public class BattleSystem : MonoBehaviour
 
 	IEnumerator PlayerAttack()
 	{
-		bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
+		var damage = playerUnit.damage;
+		var fullDamage = Mathf.RoundToInt(UnityEngine.Random.Range(damage * 0.5f, damage * 1.5f));
+		bool isDead = enemyUnit.TakeDamage(fullDamage);
 		ChangeDialogueState();
 		enemyHUD.SetHP(enemyUnit.currentHP);
 		dialogueText.text = "The attack is successful!";
 
-		yield return new WaitForSeconds(2f);
+		yield return new WaitForSeconds(1f);
+		
+		dialogueText.text = fullDamage + " damage!";
 
+		yield return new WaitForSeconds(1f);
 		if(isDead)
 		{
 			state = BattleState.WON;
@@ -93,15 +105,20 @@ public class BattleSystem : MonoBehaviour
 	{
 		state = BattleState.ENEMYTURN;
 		dialogueText.text = enemyUnit.unitName + " attacks!";
-
+		enemyAnimator.SetFloat(Attacking, 5f);
 		yield return new WaitForSeconds(1f);
 
-		bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+		//Panels[1].GetComponent<GridLayoutGroup>().GetComponent<Button>().onClick = PlayerMagic(1, "fire");
 
+
+
+		var damage = enemyUnit.damage;
+		var fullDamage = Mathf.RoundToInt(UnityEngine.Random.Range(damage * 0.5f, damage * 1.5f));
+		bool isDead = playerUnit.TakeDamage(fullDamage);
+		dialogueText.text = fullDamage + " damage!";
 		playerHUD.SetHP(playerUnit.currentHP);
-
-		yield return new WaitForSeconds(1f);
-
+		yield return new WaitForSeconds(2f);
+		enemyAnimator.SetFloat(Attacking, 0f);
 		if(isDead)
 		{
 			state = BattleState.LOST;
@@ -145,12 +162,28 @@ public class BattleSystem : MonoBehaviour
 		StartCoroutine(EnemyTurn());
 	}
 
-	IEnumerator PlayerMagic()
+	public IEnumerator PlayerMagic(string aliment)
 	{
-		bool isDead = enemyUnit.TakeDamage(playerUnit.damage*2);
+		float elem = 1f;
+		switch (aliment)
+		{
+			case "lightning":
+				elem = 2f;
+				break;
+			case "fire":
+				elem = 1.5f;
+				break;
+			case "water":
+				elem = 0.5f;
+				break;
+		}
+		
+		var damage = Mathf.RoundToInt(playerUnit.damage * elem);
+		var fullDamage = Mathf.RoundToInt(UnityEngine.Random.Range(damage * 0.5f, damage * 1.5f));
+		bool isDead = enemyUnit.TakeDamage(fullDamage);
 		ChangeDialogueState();
 		enemyHUD.SetHP(enemyUnit.currentHP);
-		dialogueText.text = "The magic-attack is successful!";
+		dialogueText.text = fullDamage+" damage!";
 
 		yield return new WaitForSeconds(2f);
 
@@ -192,6 +225,15 @@ public class BattleSystem : MonoBehaviour
 			return;
 		
 		StartCoroutine(PlayerAttack());
+	}
+
+	public void OnMagicButton(string aliment)
+	{
+		Debug.Log("Attack enemy");
+		if (state != BattleState.PLAYERTURN && state != BattleState.PLAYER_CHOOSED_ACTION)
+			return;
+		
+		StartCoroutine(PlayerMagic(aliment));
 	}
 
 	public void OnHealButton()
