@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DragonBones;
 using UnityEngine;
 using UnityEngine.UI;
+using Transform = UnityEngine.Transform;
 
 public enum BattleState { START, PLAYERTURN, PLAYER_CHOOSED_ACTION, ENEMYTURN, WON, LOST }
 
@@ -9,6 +11,7 @@ public class BattleSystem : MonoBehaviour
 {
 
 	public GameObject playerPrefab;
+	private GameObject playerGO;
 	public GameObject enemyPrefab;
 
 	public Transform playerBattleStation;
@@ -38,9 +41,9 @@ public class BattleSystem : MonoBehaviour
 	{
 		Debug.Log("Setup Battle");
 		
-		GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
+		playerGO = Instantiate(playerPrefab, playerBattleStation);
 		playerUnit = playerGO.GetComponent<BattleUnit>();
-		playerGO.transform.localScale = new Vector3(0.5f, 0.5f, 0);
+		playerGO.transform.localScale = new Vector3(0.125f, 0.125f, 0);
 		playerGO.transform.position = new Vector3(-6, -0.5f, 0);
 		
 		GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
@@ -117,6 +120,7 @@ public class BattleSystem : MonoBehaviour
 
 	void PlayerTurn()
 	{
+		playerGO.GetComponent<UnityArmatureComponent>().animation.Play("walk", 1);
 		Debug.Log("Player Turn");
 		dialogueText.text = "Choose an action:";
 		ChangeDialogueState();
@@ -135,6 +139,46 @@ public class BattleSystem : MonoBehaviour
 		StartCoroutine(EnemyTurn());
 	}
 
+	IEnumerator PlayerMagic()
+	{
+		bool isDead = enemyUnit.TakeDamage(playerUnit.damage*2);
+		ChangeDialogueState();
+		enemyHUD.SetHP(enemyUnit.currentHP);
+		dialogueText.text = "The magic-attack is successful!";
+
+		yield return new WaitForSeconds(2f);
+
+		if(isDead)
+		{
+			state = BattleState.WON;
+			EndBattle();
+		} else
+		{
+			state = BattleState.PLAYER_CHOOSED_ACTION;
+			StartCoroutine(EnemyTurn());
+		}
+	}
+
+	IEnumerator PlayerWait()
+	{
+		bool isDead = enemyUnit.TakeDamage(0);
+		ChangeDialogueState();
+		enemyHUD.SetHP(enemyUnit.currentHP);
+		dialogueText.text = "Waiting...";
+
+		yield return new WaitForSeconds(2f);
+
+		if(isDead)
+		{
+			state = BattleState.WON;
+			EndBattle();
+		} else
+		{
+			state = BattleState.PLAYER_CHOOSED_ACTION;
+			StartCoroutine(EnemyTurn());
+		}
+	}
+	
 	public void OnAttackButton()
 	{
 		Debug.Log("Attack enemy");
@@ -153,6 +197,24 @@ public class BattleSystem : MonoBehaviour
 		StartCoroutine(PlayerHeal());
 	}
 
+	public void OnMagicButton()
+	{
+		Debug.Log("Read the scroll!");
+		if (state != BattleState.PLAYERTURN && state != BattleState.PLAYER_CHOOSED_ACTION)
+			return;
+
+		StartCoroutine(PlayerMagic());
+	}
+
+	public void OnWaitButton()
+	{
+		Debug.Log("Wait one round!");
+		if (state != BattleState.PLAYERTURN && state != BattleState.PLAYER_CHOOSED_ACTION)
+			return;
+
+		StartCoroutine(PlayerWait());
+	}
+	
 	public void ChangeDialogueState()
 	{
 		if (dialogueSwitch)
