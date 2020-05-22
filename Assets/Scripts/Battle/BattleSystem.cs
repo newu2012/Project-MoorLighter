@@ -28,6 +28,8 @@ public class BattleSystem : MonoBehaviour
 	BattleUnit playerUnit;
 	BattleUnit enemyUnit;
 
+	public ParticleSystem[] effects;
+
 	public Text dialogueText;
 
 	public BattleHUD playerHUD;
@@ -56,8 +58,9 @@ public class BattleSystem : MonoBehaviour
 		
 		playerGO = Instantiate(playerPrefab, playerBattleStation);
 		playerUnit = playerGO.GetComponent<BattleUnit>();
-		playerGO.transform.localScale = new Vector3(0.125f, 0.125f, 0);
+		playerGO.transform.localScale = new Vector3(0.15f, 0.15f, 0);
 		playerGO.transform.position = new Vector3(-6, -0.5f, 0);
+		playerGO.GetComponent<UnityArmatureComponent>().animation.Play("dRINNKbeer", 1);
 		
 		//enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
 		enemyGO = GameObject.Find("Volk");
@@ -110,13 +113,14 @@ public class BattleSystem : MonoBehaviour
 
 		//Panels[1].GetComponent<GridLayoutGroup>().GetComponent<Button>().onClick = PlayerMagic(1, "fire");
 
-
-
+		
+		Instantiate(effects[0], playerBattleStation);
 		var damage = enemyUnit.damage;
 		var fullDamage = Mathf.RoundToInt(UnityEngine.Random.Range(damage * 0.5f, damage * 1.5f));
 		bool isDead = playerUnit.TakeDamage(fullDamage);
 		dialogueText.text = fullDamage + " damage!";
 		playerHUD.SetHP(playerUnit.currentHP);
+		playerHUD.setMP(playerUnit.currentMP);
 		yield return new WaitForSeconds(2f);
 		enemyAnimator.SetFloat(Attacking, 0f);
 		if(isDead)
@@ -143,15 +147,18 @@ public class BattleSystem : MonoBehaviour
 
 	void PlayerTurn()
 	{
-		playerGO.GetComponent<UnityArmatureComponent>().animation.Play("walk", 1);
+		playerGO.GetComponent<UnityArmatureComponent>().animation.Play("dRINNKbeer", 1);
 		Debug.Log("Player Turn");
 		dialogueText.text = "Choose an action:";
 		ChangeDialogueState();
 	}
 
-	IEnumerator PlayerHeal()
+	IEnumerator PlayerRestore(bool health, bool mana)
 	{
-		playerUnit.Heal(5);
+		if (health)
+			playerUnit.Heal(5);
+		if (mana)
+			playerUnit.RegenMana(5);
 		ChangeDialogueState();
 		playerHUD.SetHP(playerUnit.currentHP);
 		dialogueText.text = "You feel renewed strength!";
@@ -165,24 +172,32 @@ public class BattleSystem : MonoBehaviour
 	public IEnumerator PlayerMagic(string aliment)
 	{
 		float elem = 1f;
+		int elemInd = 0;
 		switch (aliment)
 		{
 			case "lightning":
 				elem = 2f;
+				elemInd = 1;
 				break;
 			case "fire":
 				elem = 1.5f;
+				elemInd = 2;
 				break;
 			case "water":
 				elem = 0.5f;
+				elemInd = 3;
 				break;
 		}
 		
+		playerGO.GetComponent<UnityArmatureComponent>().animation.Play("Scroll", 1);
+		yield return new WaitForSeconds(1f);
+		Instantiate(effects[elemInd], enemyBattleStation);
 		var damage = Mathf.RoundToInt(playerUnit.damage * elem);
 		var fullDamage = Mathf.RoundToInt(UnityEngine.Random.Range(damage * 0.5f, damage * 1.5f));
 		bool isDead = enemyUnit.TakeDamage(fullDamage);
 		ChangeDialogueState();
 		enemyHUD.SetHP(enemyUnit.currentHP);
+		playerHUD.setMP(playerUnit.currentMP);
 		dialogueText.text = fullDamage+" damage!";
 
 		yield return new WaitForSeconds(2f);
@@ -229,6 +244,9 @@ public class BattleSystem : MonoBehaviour
 
 	public void OnMagicButton(string aliment)
 	{
+		if (!playerUnit.CanSpendMana())
+			return;
+		playerUnit.SpendMana();
 		Debug.Log("Attack enemy");
 		if (state != BattleState.PLAYERTURN && state != BattleState.PLAYER_CHOOSED_ACTION)
 			return;
@@ -241,8 +259,26 @@ public class BattleSystem : MonoBehaviour
 		Debug.Log("Heal yourself");
 		if (state != BattleState.PLAYERTURN && state != BattleState.PLAYER_CHOOSED_ACTION)
 			return;
-
-		StartCoroutine(PlayerHeal());
+		playerGO.GetComponent<UnityArmatureComponent>().animation.Play("DrinkHP", 1);
+		StartCoroutine(PlayerRestore(true, false));
+	}
+	
+	public void OnManaButton()
+	{
+		Debug.Log("Restore yourself");
+		if (state != BattleState.PLAYERTURN && state != BattleState.PLAYER_CHOOSED_ACTION)
+			return;
+		playerGO.GetComponent<UnityArmatureComponent>().animation.Play("DrinkMana", 1);
+		StartCoroutine(PlayerRestore(false, true));
+	}
+	
+	public void OnBeerButton()
+	{
+		Debug.Log("Heal and restore yourself");
+		if (state != BattleState.PLAYERTURN && state != BattleState.PLAYER_CHOOSED_ACTION)
+			return;
+		playerGO.GetComponent<UnityArmatureComponent>().animation.Play("dRINNKbeer", 1);
+		StartCoroutine(PlayerRestore(true, true));
 	}
 
 	public void OnWaitButton()
