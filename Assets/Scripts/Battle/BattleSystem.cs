@@ -16,7 +16,7 @@ public class BattleSystem : MonoBehaviour
 {
 	public GameObject playerPrefab;
 	private GameObject playerGO;
-	
+	public GameObject damagerPrefab;
 	
 	public GameObject enemyPrefab;
 	private GameObject enemyGO;
@@ -81,17 +81,22 @@ public class BattleSystem : MonoBehaviour
 
 	IEnumerator PlayerAttack()
 	{
+		damagerPrefab.transform.position = playerGO.transform.position;
+		playerGO.transform.position = new Vector3(-15, -1);
+		damagerPrefab.GetComponent<UnityArmatureComponent>().animation.Play("Attack1", 1);
+		
 		var damage = playerUnit.damage;
 		var fullDamage = Mathf.RoundToInt(UnityEngine.Random.Range(damage * 0.5f, damage * 1.5f));
 		bool isDead = enemyUnit.TakeDamage(fullDamage);
 		ChangeDialogueState();
 		enemyHUD.SetHP(enemyUnit.currentHP);
 		dialogueText.text = "The attack is successful!";
-
+		
 		yield return new WaitForSeconds(1f);
 		
 		dialogueText.text = fullDamage + " damage!";
-
+		playerGO.transform.position = damagerPrefab.transform.position;
+		damagerPrefab.transform.position = new Vector3(-15, -1);
 		yield return new WaitForSeconds(1f);
 		if(isDead)
 		{
@@ -103,6 +108,39 @@ public class BattleSystem : MonoBehaviour
 			StartCoroutine(EnemyTurn());
 		}
 	}
+	
+	IEnumerator PlayerShadowAttack()
+	{
+		damagerPrefab.transform.position = playerPrefab.transform.position;
+		playerPrefab.transform.position = new Vector3(-15, -1);
+		damagerPrefab.GetComponent<UnityArmatureComponent>().animation.Play("Attack2", 3);
+		
+		var damage = playerUnit.damage;
+		var fullDamage = Mathf.RoundToInt(UnityEngine.Random.Range(damage * 0.5f, damage * 5f));
+		bool isDead = enemyUnit.TakeDamage(fullDamage);
+		ChangeDialogueState();
+		playerUnit.currentMP = 0;
+		playerHUD.setMP(playerUnit.currentMP);
+		enemyHUD.SetHP(enemyUnit.currentHP);
+		dialogueText.text = "The attack is successful!";
+		
+		yield return new WaitForSeconds(1f);
+		
+		dialogueText.text = fullDamage + " damage!";
+		playerPrefab.transform.position = damagerPrefab.transform.position;
+		damagerPrefab.transform.position = new Vector3(-15, -1);
+		yield return new WaitForSeconds(1f);
+		if(isDead)
+		{
+			state = BattleState.WON;
+			EndBattle();
+		} else
+		{
+			state = BattleState.PLAYER_CHOOSED_ACTION;
+			StartCoroutine(EnemyTurn());
+		}
+	}
+	
 
 	IEnumerator EnemyTurn()
 	{
@@ -147,7 +185,7 @@ public class BattleSystem : MonoBehaviour
 
 	void PlayerTurn()
 	{
-		playerGO.GetComponent<UnityArmatureComponent>().animation.Play("dRINNKbeer", 1);
+		playerGO.GetComponent<UnityArmatureComponent>().animation.Play("PROSTOI", 0);
 		Debug.Log("Player Turn");
 		dialogueText.text = "Choose an action:";
 		ChangeDialogueState();
@@ -240,6 +278,15 @@ public class BattleSystem : MonoBehaviour
 			return;
 		
 		StartCoroutine(PlayerAttack());
+	}
+	
+	public void OnSuperButton()
+	{
+		Debug.Log("Super enemy");
+		if (state != BattleState.PLAYERTURN && state != BattleState.PLAYER_CHOOSED_ACTION)
+			return;
+		
+		StartCoroutine(PlayerShadowAttack());
 	}
 
 	public void OnMagicButton(string aliment)
