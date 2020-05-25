@@ -199,6 +199,7 @@ public class BattleSystem : MonoBehaviour
 			playerUnit.RegenMana(5);
 		ChangeDialogueState();
 		playerHUD.SetHP(playerUnit.currentHP);
+		playerHUD.setMP(playerUnit.currentMP);
 		dialogueText.text = "You feel renewed strength!";
 
 		yield return new WaitForSeconds(2f);

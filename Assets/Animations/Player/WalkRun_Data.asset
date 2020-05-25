@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b77ea26c40f0d347b26d700109b5ca1, type: 3}
+  m_Name: WalkRun_Data
+  m_EditorClassIdentifier: 
+  dataName: WalkRun
+  dragonBonesJSON: {fileID: 4900000, guid: 890d8c0f2281f7248914ed884bc40a8b, type: 3}
+  textureAtlas:
+  - textureAtlasJSON: {fileID: 4900000, guid: a150a7bb87e5cee46b0a0007de75e8fb, type: 3}
+    texture: {fileID: 2800000, guid: aa319f77eefe4c3408a24ca4a78f35ab, type: 3}
+    material: {fileID: 2100000, guid: fa1cd698a6ac7384f9875ab1aceb4237, type: 2}
+    uiMaterial: {fileID: 0}
