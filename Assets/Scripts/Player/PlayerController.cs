@@ -1,13 +1,15 @@
 ﻿using System;
+using DragonBones;
 using UnityEngine;
+using Transform = UnityEngine.Transform;
 
 public class PlayerController : HealthSystem
 {
     #region dataFields
 
-    private const float moveSpeed = 2f;
+    private float moveSpeed = 2f;
     public Rigidbody2D rb;
-    public Animator animator;
+    //public Animator animator;
     private Vector2 movement;
     private float attackRate = 0.5f;
     private Vector2 lastDir;
@@ -17,6 +19,8 @@ public class PlayerController : HealthSystem
     public int damage;
     public int armor;
     private Camera _camera;
+
+    private bool walkSwtich = true;
     #endregion
 
     #region StringToHash
@@ -40,23 +44,46 @@ public class PlayerController : HealthSystem
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
         if (movement.magnitude > 0)
+        {
             lastDir = movement;
+            if (walkSwtich)
+            {
+                GetComponent<UnityArmatureComponent>().animation.Play("walk", 0);
+                walkSwtich = false;
+            }
+        }
         movement.Normalize();
-        
+
         if (Input.GetMouseButtonDown(0))
             InvokeRepeating( nameof(Attack),0.1f, attackRate);
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            moveSpeed = 4f;
+            walkSwtich = false;
+            GetComponent<UnityArmatureComponent>().animation.Play("run(HandBehindTheBack)", 0);
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            moveSpeed = 2f;
+            GetComponent<UnityArmatureComponent>().animation.Play("walk", 0);
+        }
         
         if (Input.GetMouseButtonUp(0))
             CancelInvoke(nameof(Attack));
         
         if (Input.GetKeyDown(KeyCode.Space))
             TakeDamage(5);
+
+        //if (movement.x < 0)
+        //    this.GetComponent<Armature>().flipX;
         
-        animator.SetFloat(LastHorizontal, lastDir.x);
-        animator.SetFloat(LastVertical, lastDir.y);
-        animator.SetFloat(Horizontal, movement.x);
-        animator.SetFloat(Vertical, movement.y);
-        animator.SetFloat(Speed, movement.sqrMagnitude);
+        //animator.SetFloat(LastHorizontal, lastDir.x);
+        //animator.SetFloat(LastVertical, lastDir.y);
+        //animator.SetFloat(Horizontal, movement.x);
+        //animator.SetFloat(Vertical, movement.y);
+        //animator.SetFloat(Speed, movement.sqrMagnitude);
     }
     private void FixedUpdate()
     {
