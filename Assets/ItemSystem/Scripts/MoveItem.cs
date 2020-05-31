@@ -39,6 +39,7 @@ public class MoveItem : MonoBehaviour, IPointerExitHandler
         if (alpha == 0)
             return;
         var worked = fastAccess.GetComponent<FastAccess>().ChangeAlpha(alpha, gameObject);
+        var isLast = false;
         if (worked)
         {
             var index = int.Parse(gameObject.name[gameObject.name.Length - 1].ToString());
@@ -48,20 +49,29 @@ public class MoveItem : MonoBehaviour, IPointerExitHandler
             {
                 item = Player.GetComponent<CharacterInventory>().inventoryResourceItems[index];
                 Player.GetComponent<CharacterInventory>().inventoryResourceItems.RemoveAt(index);
+                if (Player.GetComponent<CharacterInventory>().inventoryResourceItems.Count == 0)
+                    isLast = true;
             }
             else if (type.CompareTo("Equipment") == 0)
             {
                 item = Player.GetComponent<CharacterInventory>().inventoryEquipmentItems[index];
                 Player.GetComponent<CharacterInventory>().inventoryEquipmentItems.RemoveAt(index);
+                if (Player.GetComponent<CharacterInventory>().inventoryEquipmentItems.Count == 0)
+                    isLast = true;
             }
             else
             {
                 item = Player.GetComponent<CharacterInventory>().inventoryConstructionsItems[index];
                 Player.GetComponent<CharacterInventory>().inventoryConstructionsItems.RemoveAt(index);
-            }
-            this.GetComponent<ShowInformation>().Show();
+                if (Player.GetComponent<CharacterInventory>().inventoryConstructionsItems.Count == 0)
+                    isLast = true;
+            }           
+            if (isLast)
+                GetComponent<ShowInformation>().Start();
+            else
+                GetComponent<ShowInformation>().Show();
             fastAccess.GetComponent<FastAccess>().ChangeBaseColor();
-            Player.GetComponent<CharacterInventory>().inventoryPanel.GetComponent<InventoryPanel>().UpdatePanel(index, type);
+            Player.GetComponent<CharacterInventory>().inventoryPanel.GetComponent<InventoryPanel>().UpdatePanel(index, type);            
             Player.GetComponent<CharacterFastAccess>().AddToArray(item, alpha - 1);
             
             if (item.Item_Type == Item.ItemType.Equipment &&
