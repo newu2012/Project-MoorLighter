@@ -19,6 +19,7 @@ public class Item : ScriptableObject
     }
 
     public string ItemName;
+    public string ItemNameEng;
     public Sprite ItemImage;
     public ItemType Item_Type;
     public EquipmentType Equipment_Type;
@@ -26,4 +27,6 @@ public class Item : ScriptableObject
     public int Armor;
     public int MaxInInventory;
     public int Count;
+    public string RecipeRus;
+    public string RecipeEng;
 }

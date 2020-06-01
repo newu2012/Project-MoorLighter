@@ -11,10 +11,13 @@ public class ItemInspector : Editor
         var currentItem = (Item)target;
 
         currentItem.ItemName = EditorGUILayout.TextField("Item name", currentItem.ItemName);
+        currentItem.ItemNameEng = EditorGUILayout.TextField("Item name Eng", currentItem.ItemNameEng);
         currentItem.ItemImage = (Sprite)EditorGUILayout.ObjectField(currentItem.ItemImage, typeof(Sprite), GUILayout.Width(100), GUILayout.Height(100));
         currentItem.Item_Type = (Item.ItemType)EditorGUILayout.EnumPopup("Item type", currentItem.Item_Type);
         currentItem.MaxInInventory = EditorGUILayout.IntField("Max in inventory", currentItem.MaxInInventory);
         currentItem.Count = EditorGUILayout.IntField("Count", currentItem.Count);
+        currentItem.RecipeRus = EditorGUILayout.TextField("Recipe rus", currentItem.RecipeRus);
+        currentItem.RecipeEng = EditorGUILayout.TextField("Recipe Eng. Ex: \"Log 3;Rock 2\"", currentItem.RecipeEng);
 
         if (currentItem.Item_Type == Item.ItemType.Equipment)
         {

@@ -10,9 +10,12 @@ public class MoveItem : MonoBehaviour, IPointerExitHandler
     private bool isMoving = false;
     public GameObject Player;
     private bool isChanged = false;
+    public GameObject InventoryPanel;
 
     void OnMouseDown()
     {
+        if (!InventoryPanel.GetComponent<Canvas>().enabled)
+            return;
         if (this.GetComponent<Image>().sprite != null )
         {
             isMoving = true;
@@ -23,6 +26,8 @@ public class MoveItem : MonoBehaviour, IPointerExitHandler
 
     public void OnPointerExit(PointerEventData eventData) 
 	{
+        if (!InventoryPanel.GetComponent<Canvas>().enabled)
+            return;
         if (isChanged)
         {
             isMoving = false;
@@ -70,8 +75,9 @@ public class MoveItem : MonoBehaviour, IPointerExitHandler
                 GetComponent<ShowInformation>().Start();
             else
                 GetComponent<ShowInformation>().Show();
+                
             fastAccess.GetComponent<FastAccess>().ChangeBaseColor();
-            Player.GetComponent<CharacterInventory>().inventoryPanel.GetComponent<InventoryPanel>().UpdatePanel(index, type);            
+            Player.GetComponent<CharacterInventory>().inventoryPanel.GetComponent<InventoryPanel>().UpdatePanel(type);            
             Player.GetComponent<CharacterFastAccess>().AddToArray(item, alpha - 1);
             
             if (item.Item_Type == Item.ItemType.Equipment &&
@@ -80,6 +86,15 @@ public class MoveItem : MonoBehaviour, IPointerExitHandler
             else if (item.Item_Type == Item.ItemType.Equipment &&
                 item.Equipment_Type == Item.EquipmentType.Weapon)
                 Player.GetComponent<PlayerController>().ChangeDamage(item.Damage, true);
+
+            foreach (var allItem in Player.GetComponent<CharacterInventory>().AllItems)
+                if (allItem.ItemNameEng.Equals(item.ItemNameEng))
+                {
+                    allItem.Count -= item.Count;
+                    if (allItem.Count == 0)
+                        Player.GetComponent<CharacterInventory>().AllItems.RemoveAt(Player.GetComponent<CharacterInventory>().AllItems.IndexOf(allItem));
+                    return;
+                }
         }
     }
 

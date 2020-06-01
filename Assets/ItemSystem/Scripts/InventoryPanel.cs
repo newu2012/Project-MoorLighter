@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class InventoryPanel : MonoBehaviour
 {
     public Canvas canvas;
+    public GameObject KraftPanel;
+    public GameObject Player;
     // Start is called before the first frame update
     private void Start()
     {
@@ -17,7 +19,11 @@ public class InventoryPanel : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
+        {
             canvas.enabled = !canvas.enabled;
+            if (KraftPanel.GetComponent<Canvas>().enabled)
+                KraftPanel.GetComponent<Canvas>().enabled = false;
+        }
     }
 
     public void AddItem(Item item, int position)
@@ -28,15 +34,28 @@ public class InventoryPanel : MonoBehaviour
         gameO.sprite = item.ItemImage;
     }
 
-    public void UpdatePanel(int position, string type)
+    public void UpdatePanel(string type)
     {
-        for (var i = position; i < 6; i ++)
+        for (var i = 0; i < 7; i++)
         {
             var gameOCurrent = GameObject.Find("Image" + type + i.ToString()).GetComponent<Image>();
-            gameOCurrent.color = new Color(255, 255, 255, 1);
-            var gameONext = GameObject.Find("Image" + type + (i + 1).ToString()).GetComponent<Image>();
-            gameOCurrent.sprite = gameONext.sprite;
+            var list = GetList(type);
+            if (list.Count <= i)
+            {
+                gameOCurrent.sprite = null;
+                continue;
+            }
+            gameOCurrent.sprite = list[i].ItemImage;
         }
-        GameObject.Find("Image" + type + 6.ToString()).GetComponent<Image>().sprite = null;
+    }
+
+    public List<Item> GetList(string type)
+    {
+        if (type.Equals("Resource"))
+            return Player.GetComponent<CharacterInventory>().inventoryResourceItems;
+        else if (type.Equals("Equipment"))
+            return Player.GetComponent<CharacterInventory>().inventoryEquipmentItems;
+        else 
+            return Player.GetComponent<CharacterInventory>().inventoryConstructionsItems;
     }
 }

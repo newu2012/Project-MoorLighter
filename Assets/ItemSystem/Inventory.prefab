@@ -137,6 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fastAccess: {fileID: 0}
   Player: {fileID: 0}
+  InventoryPanel: {fileID: 6112846724017486091}
 --- !u!1 &916048002467979362
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,6 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fastAccess: {fileID: 0}
   Player: {fileID: 0}
+  InventoryPanel: {fileID: 6112846724017486091}
 --- !u!1 &1558268166729088425
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,6 +413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fastAccess: {fileID: 0}
   Player: {fileID: 0}
+  InventoryPanel: {fileID: 6112846724017486091}
 --- !u!1 &1580465981012390990
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,6 +551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fastAccess: {fileID: 0}
   Player: {fileID: 0}
+  InventoryPanel: {fileID: 6112846724017486091}
 --- !u!1 &1843162801936771403
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,6 +689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fastAccess: {fileID: 0}
   Player: {fileID: 0}
+  InventoryPanel: {fileID: 6112846724017486091}
 --- !u!1 &2513722246382648841
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,6 +827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fastAccess: {fileID: 0}
   Player: {fileID: 0}
+  InventoryPanel: {fileID: 6112846724017486091}
 --- !u!1 &2950570588241122526
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,6 +965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fastAccess: {fileID: 0}
   Player: {fileID: 0}
+  InventoryPanel: {fileID: 6112846724017486091}
 --- !u!1 &3140640187277068857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,6 +1103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fastAccess: {fileID: 0}
   Player: {fileID: 0}
+  InventoryPanel: {fileID: 6112846724017486091}
 --- !u!1 &3738869658073241157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1233,6 +1241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fastAccess: {fileID: 0}
   Player: {fileID: 0}
+  InventoryPanel: {fileID: 6112846724017486091}
 --- !u!1 &5218282014699846308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,6 +1379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fastAccess: {fileID: 0}
   Player: {fileID: 0}
+  InventoryPanel: {fileID: 6112846724017486091}
 --- !u!1 &5228473870380423637
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,6 +1517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fastAccess: {fileID: 0}
   Player: {fileID: 0}
+  InventoryPanel: {fileID: 6112846724017486091}
 --- !u!1 &5779963694023382704
 GameObject:
   m_ObjectHideFlags: 0
@@ -1644,6 +1655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fastAccess: {fileID: 0}
   Player: {fileID: 0}
+  InventoryPanel: {fileID: 6112846724017486091}
 --- !u!1 &6112846722687379666
 GameObject:
   m_ObjectHideFlags: 0
@@ -1880,6 +1892,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fastAccess: {fileID: 0}
   Player: {fileID: 0}
+  InventoryPanel: {fileID: 6112846724017486091}
 --- !u!1 &6112846722864508433
 GameObject:
   m_ObjectHideFlags: 0
@@ -2020,7 +2033,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 085cf84157c53a348a33035d2bf4f77b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2671,7 +2684,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f84f2973bf6c89042adc9b4c0f2f7cb5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2837,7 +2850,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -53.3, y: -20}
+  m_AnchoredPosition: {x: -53.30005, y: -20}
   m_SizeDelta: {x: 66.6, y: 283.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6112846724276369663
@@ -2939,7 +2952,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 13a5daf3a964f1e419c1cbe0b011d284, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3060,7 +3073,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 194.99997}
+  m_AnchoredPosition: {x: -320, y: 197}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6112846724729645045
@@ -3240,6 +3253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fastAccess: {fileID: 0}
   Player: {fileID: 0}
+  InventoryPanel: {fileID: 6112846724017486091}
 --- !u!1 &7363240368794229307
 GameObject:
   m_ObjectHideFlags: 0
@@ -3377,6 +3391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fastAccess: {fileID: 0}
   Player: {fileID: 0}
+  InventoryPanel: {fileID: 6112846724017486091}
 --- !u!1 &7907354459102427907
 GameObject:
   m_ObjectHideFlags: 0
@@ -3514,6 +3529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fastAccess: {fileID: 0}
   Player: {fileID: 0}
+  InventoryPanel: {fileID: 6112846724017486091}
 --- !u!1 &8419967202396187261
 GameObject:
   m_ObjectHideFlags: 0
@@ -3651,6 +3667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fastAccess: {fileID: 0}
   Player: {fileID: 0}
+  InventoryPanel: {fileID: 6112846724017486091}
 --- !u!1 &8801331098678926018
 GameObject:
   m_ObjectHideFlags: 0
@@ -3788,6 +3805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fastAccess: {fileID: 0}
   Player: {fileID: 0}
+  InventoryPanel: {fileID: 6112846724017486091}
 --- !u!1 &8846523913914731664
 GameObject:
   m_ObjectHideFlags: 0
@@ -3925,6 +3943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fastAccess: {fileID: 0}
   Player: {fileID: 0}
+  InventoryPanel: {fileID: 6112846724017486091}
 --- !u!1 &9157604922065494312
 GameObject:
   m_ObjectHideFlags: 0
@@ -4062,6 +4081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fastAccess: {fileID: 0}
   Player: {fileID: 0}
+  InventoryPanel: {fileID: 6112846724017486091}
 --- !u!1 &9170642530418590850
 GameObject:
   m_ObjectHideFlags: 0
@@ -4199,3 +4219,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fastAccess: {fileID: 0}
   Player: {fileID: 0}
+  InventoryPanel: {fileID: 6112846724017486091}

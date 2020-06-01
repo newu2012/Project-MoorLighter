@@ -26,7 +26,7 @@ public class MoveFastAccess : MonoBehaviour
                 Player.GetComponent<PlayerController>().ChangeArmor(currentItem.Armor, false);
             else if (currentItem.Item_Type == Item.ItemType.Equipment &&
                 currentItem.Equipment_Type == Item.EquipmentType.Weapon)
-                Player.GetComponent<PlayerController>().ChangeDamage(currentItem.Damage, false);           
+                Player.GetComponent<PlayerController>().ChangeDamage(currentItem.Damage, false);
         }
     }
 

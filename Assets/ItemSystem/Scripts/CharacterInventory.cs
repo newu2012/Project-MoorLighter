@@ -10,6 +10,7 @@ public class CharacterInventory : MonoBehaviour
     [FormerlySerializedAs("inventaryResourceItems")] public List<Item> inventoryResourceItems = new List<Item>();
     [FormerlySerializedAs("inventaryEquipmentItems")] public List<Item> inventoryEquipmentItems = new List<Item>();
     [FormerlySerializedAs("inventaryConstructionsItems")] public List<Item> inventoryConstructionsItems = new List<Item>();
+    public List<Item> AllItems = new List<Item>();
     // Start is called before the first frame update
     private void Start()
     {
@@ -37,6 +38,17 @@ public class CharacterInventory : MonoBehaviour
 
     public void AddToList(Item itemToAdd, List<Item> List)
     {
+        var inList = false;
+        foreach (var item in AllItems)
+            if (item.ItemName.Equals(itemToAdd.ItemName))
+            {
+                item.Count += itemToAdd.Count;
+                inList = true;
+                break;
+            }
+        if (!inList)
+            AllItems.Add(CopyItem.Copy(itemToAdd));
+
         foreach (var item in List)
             if (item.ItemName.CompareTo(itemToAdd.ItemName) == 0 && item.Count < item.MaxInInventory)
             {
@@ -45,22 +57,8 @@ public class CharacterInventory : MonoBehaviour
             }
         if (List.Count < 7)
         {
-            List.Add(CopyItem(itemToAdd));
+            List.Add(CopyItem.Copy(itemToAdd));
             inventoryPanel.GetComponent<InventoryPanel>().AddItem(itemToAdd, List.Count - 1);
         }
-    }
-
-    public Item CopyItem(Item item)
-    {
-        var result = ScriptableObject.CreateInstance<Item>();
-        result.ItemName = item.ItemName;
-        result.ItemImage = item.ItemImage;
-        result.Item_Type = item.Item_Type;
-        result.Equipment_Type = item.Equipment_Type;
-        result.Damage = item.Damage;
-        result.Armor = item.Armor;
-        result.MaxInInventory = item.MaxInInventory;
-        result.Count = item.Count;
-        return result;
     }
 }
