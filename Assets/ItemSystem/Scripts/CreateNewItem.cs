@@ -78,10 +78,12 @@ public class CreateNewItem : MonoBehaviour
     {
         if (list.Count < 7)
             return true;
-        foreach (var item in list)
-            if (item.ItemNameEng.Equals(name) && item.Count < item.MaxInInventory)
-                return true;
-
+        for (var i = list.Count - 1; i >= 0; i--)
+            if (list[i].ItemNameEng.Equals(name))
+                if (list[i].Count < list[i].MaxInInventory)
+                    return true;
+                else
+                    return false;
         return false;
     }
 }
