@@ -17,6 +17,7 @@ public class BattleSystem : MonoBehaviour
 	public GameObject playerPrefab;
 	private GameObject playerGO;
 	public GameObject damagerPrefab;
+	public GameObject weakPrefab;
 	
 	public GameObject enemyPrefab;
 	private GameObject enemyGO;
@@ -68,7 +69,7 @@ public class BattleSystem : MonoBehaviour
 		//enemyGO.transform.localScale = new Vector3(0.25f, 0.25f, 0);
 		//enemyGO.transform.position = new Vector3(6, -1f, 0);
 		
-		dialogueText.text = "A wild " + enemyUnit.unitName + " approaches...";
+		dialogueText.text = "Приближается дикий " + enemyUnit.unitName + "...";
 
 		playerHUD.SetHUD(playerUnit);
 		enemyHUD.SetHUD(enemyUnit);
@@ -81,22 +82,37 @@ public class BattleSystem : MonoBehaviour
 
 	IEnumerator PlayerAttack()
 	{
+		/* */
 		damagerPrefab.transform.position = playerGO.transform.position;
 		playerGO.transform.position = new Vector3(-15, -1);
 		damagerPrefab.GetComponent<UnityArmatureComponent>().animation.Play("Attack1", 1);
+		/* */
+		/* 
+		weakPrefab.transform.position = playerGO.transform.position;
+		playerGO.transform.position = new Vector3(-15, -1);
+		weakPrefab.GetComponent<UnityArmatureComponent>().animation.Play("newAnimation", 1); 
+		 */
+		
+		
 		
 		var damage = playerUnit.damage;
 		var fullDamage = Mathf.RoundToInt(UnityEngine.Random.Range(damage * 0.5f, damage * 1.5f));
 		bool isDead = enemyUnit.TakeDamage(fullDamage);
 		ChangeDialogueState();
 		enemyHUD.SetHP(enemyUnit.currentHP);
-		dialogueText.text = "The attack is successful!";
+		dialogueText.text = "Атака прошла успешно!";
 		
 		yield return new WaitForSeconds(1f);
 		
-		dialogueText.text = fullDamage + " damage!";
+		dialogueText.text = fullDamage + " урона!";
+		/* */
 		playerGO.transform.position = damagerPrefab.transform.position;
 		damagerPrefab.transform.position = new Vector3(-15, -1);
+		/* */
+		/* 
+		playerGO.transform.position = weakPrefab.transform.position;
+		weakPrefab.transform.position = new Vector3(-15, -1);
+		 */
 		yield return new WaitForSeconds(1f);
 		if(isDead)
 		{
@@ -122,11 +138,11 @@ public class BattleSystem : MonoBehaviour
 		playerUnit.currentMP = 0;
 		playerHUD.setMP(playerUnit.currentMP);
 		enemyHUD.SetHP(enemyUnit.currentHP);
-		dialogueText.text = "The attack is successful!";
+		dialogueText.text = "Удачная теневая атака!";
 		
 		yield return new WaitForSeconds(1f);
 		
-		dialogueText.text = fullDamage + " damage!";
+		dialogueText.text = fullDamage + " урона! Ого!";
 		playerPrefab.transform.position = damagerPrefab.transform.position;
 		damagerPrefab.transform.position = new Vector3(-15, -1);
 		yield return new WaitForSeconds(1f);
@@ -145,7 +161,7 @@ public class BattleSystem : MonoBehaviour
 	IEnumerator EnemyTurn()
 	{
 		state = BattleState.ENEMYTURN;
-		dialogueText.text = enemyUnit.unitName + " attacks!";
+		dialogueText.text = enemyUnit.unitName + " атакует!";
 		enemyAnimator.SetFloat(Attacking, 5f);
 		yield return new WaitForSeconds(1f);
 
@@ -156,7 +172,7 @@ public class BattleSystem : MonoBehaviour
 		var damage = enemyUnit.damage;
 		var fullDamage = Mathf.RoundToInt(UnityEngine.Random.Range(damage * 0.5f, damage * 1.5f));
 		bool isDead = playerUnit.TakeDamage(fullDamage);
-		dialogueText.text = fullDamage + " damage!";
+		dialogueText.text = fullDamage + " урона!";
 		playerHUD.SetHP(playerUnit.currentHP);
 		playerHUD.setMP(playerUnit.currentMP);
 		yield return new WaitForSeconds(2f);
@@ -176,10 +192,10 @@ public class BattleSystem : MonoBehaviour
 	{
 		if(state == BattleState.WON)
 		{
-			dialogueText.text = "You won the battle!";
+			dialogueText.text = "Вы победили в битве!";
 		} else if (state == BattleState.LOST)
 		{
-			dialogueText.text = "You were defeated.";
+			dialogueText.text = "Вы проиграли в битве.";
 		}
 	}
 
@@ -187,7 +203,7 @@ public class BattleSystem : MonoBehaviour
 	{
 		playerGO.GetComponent<UnityArmatureComponent>().animation.Play("PROSTOI", 0);
 		Debug.Log("Player Turn");
-		dialogueText.text = "Choose an action:";
+		dialogueText.text = "Выберите действие:";
 		ChangeDialogueState();
 	}
 
@@ -200,7 +216,11 @@ public class BattleSystem : MonoBehaviour
 		ChangeDialogueState();
 		playerHUD.SetHP(playerUnit.currentHP);
 		playerHUD.setMP(playerUnit.currentMP);
+<<<<<<< Updated upstream
 		dialogueText.text = "You feel renewed strength!";
+=======
+		dialogueText.text = "Силы восстанавливаются!";
+>>>>>>> Stashed changes
 
 		yield return new WaitForSeconds(2f);
 
@@ -237,7 +257,7 @@ public class BattleSystem : MonoBehaviour
 		ChangeDialogueState();
 		enemyHUD.SetHP(enemyUnit.currentHP);
 		playerHUD.setMP(playerUnit.currentMP);
-		dialogueText.text = fullDamage+" damage!";
+		dialogueText.text = fullDamage +" урона!";
 
 		yield return new WaitForSeconds(2f);
 
@@ -257,7 +277,7 @@ public class BattleSystem : MonoBehaviour
 		bool isDead = enemyUnit.TakeDamage(0);
 		ChangeDialogueState();
 		enemyHUD.SetHP(enemyUnit.currentHP);
-		dialogueText.text = "Waiting...";
+		dialogueText.text = "Ждём...";
 
 		yield return new WaitForSeconds(2f);
 

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b77ea26c40f0d347b26d700109b5ca1, type: 3}
+  m_Name: SimpleSword_Data
+  m_EditorClassIdentifier: 
+  dataName: SimpleSword
+  dragonBonesJSON: {fileID: 4900000, guid: e021bc4548fc24c4c8cdf1f20f743916, type: 3}
+  textureAtlas:
+  - textureAtlasJSON: {fileID: 4900000, guid: 90c4f112667ff284eadec17e6a8fccf2, type: 3}
+    texture: {fileID: 2800000, guid: 1adc25471f667b3488dafd1a87938994, type: 3}
+    material: {fileID: 2100000, guid: 0c953b4242c6a21459dae122b8c5c11b, type: 2}
+    uiMaterial: {fileID: 0}

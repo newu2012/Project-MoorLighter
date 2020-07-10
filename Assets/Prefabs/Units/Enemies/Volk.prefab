@@ -113,8 +113,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 079c0ee47ae431a4697b113e590cfaf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: BigWolf
+  unitName: "\u0412\u043E\u043B\u043A"
   unitLevel: 10
   damage: 5
   maxHP: 25
   currentHP: 25
+  maxMP: 0
+  currentMP: 0

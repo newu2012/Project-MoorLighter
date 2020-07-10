@@ -1,13 +1,9 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream:Assets/Animations/Player/WalkRun_Data.asset.meta
 guid: abd10e328f53bad489c29c9d1bf77030
 =======
 guid: d26741da636e19b4b82b5a47decfa6ed
 >>>>>>> Stashed changes:Assets/Animations/NPC/NPC_2_Data.asset.meta
-=======
-guid: abd10e328f53bad489c29c9d1bf77030
->>>>>>> Stashed changes
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

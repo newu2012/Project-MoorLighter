@@ -1,5 +1,4 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream:Assets/Animations/Player/WalkRun_ske.json.meta
 guid: 890d8c0f2281f7248914ed884bc40a8b
 TextScriptImporter:
@@ -8,10 +7,6 @@ guid: ad36b6ca252522b40a3eb1dcfbea36eb
 folderAsset: yes
 DefaultImporter:
 >>>>>>> Stashed changes:Assets/Sprites/NPC_buildings.meta
-=======
-guid: 890d8c0f2281f7248914ed884bc40a8b
-TextScriptImporter:
->>>>>>> Stashed changes
   externalObjects: {}
   userData: 
   assetBundleName: 

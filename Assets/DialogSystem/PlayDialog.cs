@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+<<<<<<< Updated upstream
+=======
+using System;
+using DragonBones;
+using Transform = UnityEngine.Transform;
+>>>>>>> Stashed changes
 
 public class PlayDialog : MonoBehaviour
 {
@@ -10,6 +16,10 @@ public class PlayDialog : MonoBehaviour
     List<Phrase> Phrases;
     public Canvas Canvas;
     private int currentMessageNumber;
+<<<<<<< Updated upstream
+=======
+    public GameObject npc;
+>>>>>>> Stashed changes
 
     public void Start()
     {
@@ -21,6 +31,10 @@ public class PlayDialog : MonoBehaviour
         Phrases = phrases;
         Canvas.enabled = true;        
         currentMessageNumber = 0;
+<<<<<<< Updated upstream
+=======
+        npc.GetComponent<UnityArmatureComponent>().animation.Play("Танец", 0);
+>>>>>>> Stashed changes
         ShowMessage();
     }
 
@@ -33,6 +47,10 @@ public class PlayDialog : MonoBehaviour
         else
         {
             Canvas.enabled = false;
+<<<<<<< Updated upstream
+=======
+            npc.GetComponent<UnityArmatureComponent>().animation.Play("PROSTOI", 0);
+>>>>>>> Stashed changes
             return;
         }
 

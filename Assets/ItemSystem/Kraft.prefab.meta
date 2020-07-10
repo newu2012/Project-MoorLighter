@@ -1,6 +1,17 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream:Assets/ItemSystem/Kraft.prefab.meta
 guid: 4ae2440e2d0eede4083f741960f3ef85
 PrefabImporter:
+=======
+guid: 309625ba5f6056d4a91ccb23d7b7014e
+folderAsset: yes
+DefaultImporter:
+>>>>>>> Stashed changes:Assets/DialogSystem.meta
+=======
+guid: 4ae2440e2d0eede4083f741960f3ef85
+PrefabImporter:
+>>>>>>> Stashed changes
   externalObjects: {}
   userData: 
   assetBundleName: 

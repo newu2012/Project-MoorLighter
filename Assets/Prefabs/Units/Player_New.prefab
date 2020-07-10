@@ -358,7 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 079c0ee47ae431a4697b113e590cfaf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Player
+  unitName: "\u0418\u0433\u0440\u043E\u043A"
   unitLevel: 1
   damage: 5
   maxHP: 15
